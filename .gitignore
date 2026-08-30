@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+venv-geo/
+
+# Secrets
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
