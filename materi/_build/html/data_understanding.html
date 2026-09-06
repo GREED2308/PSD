@@ -1,0 +1,2219 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Data Understanding &#8212; PSD (Proyek Sains Data)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'data_understanding';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Business Understanding" href="business_understanding.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/archlinux-logo.png" class="logo__image only-light" alt="PSD (Proyek Sains Data) - Home"/>
+    <img src="_static/archlinux-logo.png" class="logo__image only-dark pst-js-only" alt="PSD (Proyek Sains Data) - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Biodata Diri
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="atmosfer.html">PSD — Proyek Sains Data</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="business_understanding.html">Business Understanding</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Data Understanding</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/GREED2308/PSD" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/data_understanding.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Data Understanding</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-parameter-polutan-atmosfer-desa-sidojangkung">Analisis Parameter Polutan Atmosfer Desa Sidojangkung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-data-understanding">1. Tujuan Data Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-dataset">2. Deskripsi Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif">3. Statistik Deskriptif</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-missing-value">4. Analisis Missing Value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pemeriksaan-nilai-tidak-biasa">5. Pemeriksaan Nilai Tidak Biasa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-rata-rata-bulanan">6. Analisis Rata-rata Bulanan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi-awal-rata-rata-bulanan">Interpretasi Awal Rata-rata Bulanan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-time-series">7. Visualisasi Time Series</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kelengkapan-data-berdasarkan-bulan">8. Kelengkapan Data Berdasarkan Bulan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temuan-data-understanding">9. Temuan Data Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">10. Kesimpulan</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="data-understanding">
+<h1>Data Understanding<a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h1>
+<section id="analisis-parameter-polutan-atmosfer-desa-sidojangkung">
+<h2>Analisis Parameter Polutan Atmosfer Desa Sidojangkung<a class="headerlink" href="#analisis-parameter-polutan-atmosfer-desa-sidojangkung" title="Link to this heading">#</a></h2>
+<p>Notebook ini digunakan untuk melakukan tahap <strong>Data Understanding</strong> pada proyek Proyek Sains Data (PSD).</p>
+<p>Wilayah penelitian:</p>
+<ul class="simple">
+<li><p>Desa: Sidojangkung</p></li>
+<li><p>Kecamatan: Menganti</p></li>
+<li><p>Kabupaten: Gresik</p></li>
+<li><p>Provinsi: Jawa Timur</p></li>
+</ul>
+<p>Sumber data parameter atmosfer:</p>
+<ul class="simple">
+<li><p>Copernicus Sentinel-5P / TROPOMI Level-2</p></li>
+</ul>
+<p>Parameter yang dianalisis:</p>
+<ul class="simple">
+<li><p>NO₂ (Nitrogen Dioxide)</p></li>
+<li><p>CO (Carbon Monoxide)</p></li>
+<li><p>O₃ (Ozone)</p></li>
+<li><p>SO₂ (Sulfur Dioxide)</p></li>
+</ul>
+<p>Periode pengamatan:
+<strong>1 September 2025 – 30 Agustus 2026</strong></p>
+<p>Data telah diagregasi secara harian menggunakan batas wilayah Desa Sidojangkung dalam format GeoJSON.</p>
+</section>
+<section id="tujuan-data-understanding">
+<h2>1. Tujuan Data Understanding<a class="headerlink" href="#tujuan-data-understanding" title="Link to this heading">#</a></h2>
+<p>Tahap Data Understanding dilakukan untuk memahami struktur, karakteristik, kelengkapan, dan kualitas dataset sebelum memasuki tahap Data Preparation.</p>
+<p>Eksplorasi yang dilakukan meliputi:</p>
+<ol class="arabic simple">
+<li><p>Memahami struktur dataset.</p></li>
+<li><p>Mendeskripsikan setiap fitur.</p></li>
+<li><p>Menghitung statistik deskriptif.</p></li>
+<li><p>Memeriksa missing value.</p></li>
+<li><p>Mengidentifikasi nilai yang tidak biasa.</p></li>
+<li><p>Menganalisis perubahan parameter polutan berdasarkan waktu.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import library</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Load dataset kualitas udara</span>
+
+<span class="n">DATA_PATH</span> <span class="o">=</span> <span class="s2">"../data/processed/sidojangkung_air_quality_daily.csv"</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_PATH</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>no2_mean</th>
+      <th>no2_min</th>
+      <th>no2_max</th>
+      <th>no2_stdev</th>
+      <th>no2_sample_count</th>
+      <th>no2_nodata_count</th>
+      <th>co_mean</th>
+      <th>co_min</th>
+      <th>co_max</th>
+      <th>...</th>
+      <th>o3_max</th>
+      <th>o3_stdev</th>
+      <th>o3_sample_count</th>
+      <th>o3_nodata_count</th>
+      <th>so2_mean</th>
+      <th>so2_min</th>
+      <th>so2_max</th>
+      <th>so2_stdev</th>
+      <th>so2_sample_count</th>
+      <th>so2_nodata_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2025-09-01</td>
+      <td>0.000028</td>
+      <td>0.000028</td>
+      <td>0.000028</td>
+      <td>8.421102e-08</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.024130</td>
+      <td>0.023843</td>
+      <td>0.024417</td>
+      <td>...</td>
+      <td>0.116017</td>
+      <td>0.000349</td>
+      <td>2</td>
+      <td>0</td>
+      <td>-0.000008</td>
+      <td>-0.000102</td>
+      <td>0.000086</td>
+      <td>0.000094</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2025-09-02</td>
+      <td>0.000026</td>
+      <td>0.000026</td>
+      <td>0.000026</td>
+      <td>0.000000e+00</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.023826</td>
+      <td>0.022839</td>
+      <td>0.024813</td>
+      <td>...</td>
+      <td>0.114800</td>
+      <td>0.000000</td>
+      <td>2</td>
+      <td>0</td>
+      <td>-0.000126</td>
+      <td>-0.000126</td>
+      <td>-0.000126</td>
+      <td>0.000000</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2025-09-03</td>
+      <td>0.000025</td>
+      <td>0.000025</td>
+      <td>0.000025</td>
+      <td>0.000000e+00</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.023421</td>
+      <td>0.022760</td>
+      <td>0.024081</td>
+      <td>...</td>
+      <td>0.113417</td>
+      <td>0.000000</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.000005</td>
+      <td>0.000005</td>
+      <td>0.000005</td>
+      <td>0.000000</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2025-09-04</td>
+      <td>0.000029</td>
+      <td>0.000029</td>
+      <td>0.000029</td>
+      <td>0.000000e+00</td>
+      <td>2</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0.114204</td>
+      <td>0.000000</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.000512</td>
+      <td>0.000512</td>
+      <td>0.000512</td>
+      <td>0.000000</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025-09-05</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0.033698</td>
+      <td>0.033698</td>
+      <td>0.033698</td>
+      <td>...</td>
+      <td>0.113721</td>
+      <td>0.000000</td>
+      <td>2</td>
+      <td>0</td>
+      <td>-0.000386</td>
+      <td>-0.000386</td>
+      <td>-0.000386</td>
+      <td>0.000000</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 25 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ukuran dataset</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Jumlah baris :"</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Jumlah kolom:"</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah baris : 364
+Jumlah kolom: 25
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Informasi dataset</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 364 entries, 0 to 363
+Data columns (total 25 columns):
+ #   Column            Non-Null Count  Dtype  
+---  ------            --------------  -----  
+ 0   date              364 non-null    str    
+ 1   no2_mean          170 non-null    float64
+ 2   no2_min           170 non-null    float64
+ 3   no2_max           170 non-null    float64
+ 4   no2_stdev         170 non-null    float64
+ 5   no2_sample_count  364 non-null    int64  
+ 6   no2_nodata_count  364 non-null    int64  
+ 7   co_mean           220 non-null    float64
+ 8   co_min            220 non-null    float64
+ 9   co_max            220 non-null    float64
+ 10  co_stdev          220 non-null    float64
+ 11  co_sample_count   364 non-null    int64  
+ 12  co_nodata_count   364 non-null    int64  
+ 13  o3_mean           360 non-null    float64
+ 14  o3_min            360 non-null    float64
+ 15  o3_max            360 non-null    float64
+ 16  o3_stdev          360 non-null    float64
+ 17  o3_sample_count   364 non-null    int64  
+ 18  o3_nodata_count   364 non-null    int64  
+ 19  so2_mean          218 non-null    float64
+ 20  so2_min           218 non-null    float64
+ 21  so2_max           218 non-null    float64
+ 22  so2_stdev         218 non-null    float64
+ 23  so2_sample_count  364 non-null    int64  
+ 24  so2_nodata_count  364 non-null    int64  
+dtypes: float64(16), int64(8), str(1)
+memory usage: 71.2 KB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Konversi kolom tanggal</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s2">"date"</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"date"</span><span class="p">])</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class 'pandas.DataFrame'&gt;
+RangeIndex: 364 entries, 0 to 363
+Data columns (total 25 columns):
+ #   Column            Non-Null Count  Dtype         
+---  ------            --------------  -----         
+ 0   date              364 non-null    datetime64[us]
+ 1   no2_mean          170 non-null    float64       
+ 2   no2_min           170 non-null    float64       
+ 3   no2_max           170 non-null    float64       
+ 4   no2_stdev         170 non-null    float64       
+ 5   no2_sample_count  364 non-null    int64         
+ 6   no2_nodata_count  364 non-null    int64         
+ 7   co_mean           220 non-null    float64       
+ 8   co_min            220 non-null    float64       
+ 9   co_max            220 non-null    float64       
+ 10  co_stdev          220 non-null    float64       
+ 11  co_sample_count   364 non-null    int64         
+ 12  co_nodata_count   364 non-null    int64         
+ 13  o3_mean           360 non-null    float64       
+ 14  o3_min            360 non-null    float64       
+ 15  o3_max            360 non-null    float64       
+ 16  o3_stdev          360 non-null    float64       
+ 17  o3_sample_count   364 non-null    int64         
+ 18  o3_nodata_count   364 non-null    int64         
+ 19  so2_mean          218 non-null    float64       
+ 20  so2_min           218 non-null    float64       
+ 21  so2_max           218 non-null    float64       
+ 22  so2_stdev         218 non-null    float64       
+ 23  so2_sample_count  364 non-null    int64         
+ 24  so2_nodata_count  364 non-null    int64         
+dtypes: datetime64[us](1), float64(16), int64(8)
+memory usage: 71.2 KB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Periode dataset</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Tanggal awal :"</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s2">"date"</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Tanggal akhir:"</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s2">"date"</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tanggal awal : 2025-09-01
+Tanggal akhir: 2026-08-30
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Daftar fitur</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">column</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>01. date
+02. no2_mean
+03. no2_min
+04. no2_max
+05. no2_stdev
+06. no2_sample_count
+07. no2_nodata_count
+08. co_mean
+09. co_min
+10. co_max
+11. co_stdev
+12. co_sample_count
+13. co_nodata_count
+14. o3_mean
+15. o3_min
+16. o3_max
+17. o3_stdev
+18. o3_sample_count
+19. o3_nodata_count
+20. so2_mean
+21. so2_min
+22. so2_max
+23. so2_stdev
+24. so2_sample_count
+25. so2_nodata_count
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="deskripsi-dataset">
+<h2>2. Deskripsi Dataset<a class="headerlink" href="#deskripsi-dataset" title="Link to this heading">#</a></h2>
+<p>Dataset terdiri atas data harian parameter atmosfer yang diperoleh dari Sentinel-5P/TROPOMI untuk wilayah Desa Sidojangkung.</p>
+<p>Setiap baris merepresentasikan satu interval pengamatan harian. Dataset mencakup nilai statistik minimum, maksimum, rata-rata, dan standar deviasi untuk masing-masing parameter, serta informasi jumlah sampel dan jumlah data yang tidak tersedia.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feature_description</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">"feature"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"date"</span><span class="p">,</span>
+        <span class="s2">"no2_mean"</span><span class="p">,</span> <span class="s2">"no2_min"</span><span class="p">,</span> <span class="s2">"no2_max"</span><span class="p">,</span> <span class="s2">"no2_stdev"</span><span class="p">,</span>
+        <span class="s2">"no2_sample_count"</span><span class="p">,</span> <span class="s2">"no2_nodata_count"</span><span class="p">,</span>
+        <span class="s2">"co_mean"</span><span class="p">,</span> <span class="s2">"co_min"</span><span class="p">,</span> <span class="s2">"co_max"</span><span class="p">,</span> <span class="s2">"co_stdev"</span><span class="p">,</span>
+        <span class="s2">"co_sample_count"</span><span class="p">,</span> <span class="s2">"co_nodata_count"</span><span class="p">,</span>
+        <span class="s2">"o3_mean"</span><span class="p">,</span> <span class="s2">"o3_min"</span><span class="p">,</span> <span class="s2">"o3_max"</span><span class="p">,</span> <span class="s2">"o3_stdev"</span><span class="p">,</span>
+        <span class="s2">"o3_sample_count"</span><span class="p">,</span> <span class="s2">"o3_nodata_count"</span><span class="p">,</span>
+        <span class="s2">"so2_mean"</span><span class="p">,</span> <span class="s2">"so2_min"</span><span class="p">,</span> <span class="s2">"so2_max"</span><span class="p">,</span> <span class="s2">"so2_stdev"</span><span class="p">,</span>
+        <span class="s2">"so2_sample_count"</span><span class="p">,</span> <span class="s2">"so2_nodata_count"</span>
+    <span class="p">],</span>
+    <span class="s2">"description"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"Tanggal pengamatan"</span><span class="p">,</span>
+
+        <span class="s2">"Rata-rata NO₂"</span><span class="p">,</span>
+        <span class="s2">"Nilai minimum NO₂"</span><span class="p">,</span>
+        <span class="s2">"Nilai maksimum NO₂"</span><span class="p">,</span>
+        <span class="s2">"Standar deviasi NO₂"</span><span class="p">,</span>
+        <span class="s2">"Jumlah sampel/pixel NO₂ yang digunakan"</span><span class="p">,</span>
+        <span class="s2">"Jumlah sampel/pixel NO₂ tanpa data"</span><span class="p">,</span>
+
+        <span class="s2">"Rata-rata CO"</span><span class="p">,</span>
+        <span class="s2">"Nilai minimum CO"</span><span class="p">,</span>
+        <span class="s2">"Nilai maksimum CO"</span><span class="p">,</span>
+        <span class="s2">"Standar deviasi CO"</span><span class="p">,</span>
+        <span class="s2">"Jumlah sampel/pixel CO yang digunakan"</span><span class="p">,</span>
+        <span class="s2">"Jumlah sampel/pixel CO tanpa data"</span><span class="p">,</span>
+
+        <span class="s2">"Rata-rata O₃"</span><span class="p">,</span>
+        <span class="s2">"Nilai minimum O₃"</span><span class="p">,</span>
+        <span class="s2">"Nilai maksimum O₃"</span><span class="p">,</span>
+        <span class="s2">"Standar deviasi O₃"</span><span class="p">,</span>
+        <span class="s2">"Jumlah sampel/pixel O₃ yang digunakan"</span><span class="p">,</span>
+        <span class="s2">"Jumlah sampel/pixel O₃ tanpa data"</span><span class="p">,</span>
+
+        <span class="s2">"Rata-rata SO₂"</span><span class="p">,</span>
+        <span class="s2">"Nilai minimum SO₂"</span><span class="p">,</span>
+        <span class="s2">"Nilai maksimum SO₂"</span><span class="p">,</span>
+        <span class="s2">"Standar deviasi SO₂"</span><span class="p">,</span>
+        <span class="s2">"Jumlah sampel/pixel SO₂ yang digunakan"</span><span class="p">,</span>
+        <span class="s2">"Jumlah sampel/pixel SO₂ tanpa data"</span>
+    <span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">feature_description</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>feature</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>date</td>
+      <td>Tanggal pengamatan</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>no2_mean</td>
+      <td>Rata-rata NO₂</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>no2_min</td>
+      <td>Nilai minimum NO₂</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>no2_max</td>
+      <td>Nilai maksimum NO₂</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>no2_stdev</td>
+      <td>Standar deviasi NO₂</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>no2_sample_count</td>
+      <td>Jumlah sampel/pixel NO₂ yang digunakan</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>no2_nodata_count</td>
+      <td>Jumlah sampel/pixel NO₂ tanpa data</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>co_mean</td>
+      <td>Rata-rata CO</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>co_min</td>
+      <td>Nilai minimum CO</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>co_max</td>
+      <td>Nilai maksimum CO</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>co_stdev</td>
+      <td>Standar deviasi CO</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>co_sample_count</td>
+      <td>Jumlah sampel/pixel CO yang digunakan</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>co_nodata_count</td>
+      <td>Jumlah sampel/pixel CO tanpa data</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>o3_mean</td>
+      <td>Rata-rata O₃</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>o3_min</td>
+      <td>Nilai minimum O₃</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>o3_max</td>
+      <td>Nilai maksimum O₃</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>o3_stdev</td>
+      <td>Standar deviasi O₃</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>o3_sample_count</td>
+      <td>Jumlah sampel/pixel O₃ yang digunakan</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>o3_nodata_count</td>
+      <td>Jumlah sampel/pixel O₃ tanpa data</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>so2_mean</td>
+      <td>Rata-rata SO₂</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>so2_min</td>
+      <td>Nilai minimum SO₂</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>so2_max</td>
+      <td>Nilai maksimum SO₂</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>so2_stdev</td>
+      <td>Standar deviasi SO₂</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>so2_sample_count</td>
+      <td>Jumlah sampel/pixel SO₂ yang digunakan</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>so2_nodata_count</td>
+      <td>Jumlah sampel/pixel SO₂ tanpa data</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="statistik-deskriptif">
+<h2>3. Statistik Deskriptif<a class="headerlink" href="#statistik-deskriptif" title="Link to this heading">#</a></h2>
+<p>Statistik deskriptif digunakan untuk melihat karakteristik dasar masing-masing parameter polutan yang diamati.</p>
+<p>Statistik yang dihitung meliputi:</p>
+<ul class="simple">
+<li><p>jumlah data valid;</p></li>
+<li><p>jumlah missing value;</p></li>
+<li><p>nilai minimum;</p></li>
+<li><p>nilai maksimum;</p></li>
+<li><p>rata-rata;</p></li>
+<li><p>median;</p></li>
+<li><p>standar deviasi.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Statistik deskriptif masing-masing parameter</span>
+
+<span class="n">pollutants</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"NO₂"</span><span class="p">:</span> <span class="s2">"no2_mean"</span><span class="p">,</span>
+    <span class="s2">"CO"</span><span class="p">:</span> <span class="s2">"co_mean"</span><span class="p">,</span>
+    <span class="s2">"O₃"</span><span class="p">:</span> <span class="s2">"o3_mean"</span><span class="p">,</span>
+    <span class="s2">"SO₂"</span><span class="p">:</span> <span class="s2">"so2_mean"</span>
+<span class="p">}</span>
+
+<span class="n">stats</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">pollutant</span><span class="p">,</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">pollutants</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">series</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span>
+
+    <span class="n">stats</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+        <span class="s2">"Polutan"</span><span class="p">:</span> <span class="n">pollutant</span><span class="p">,</span>
+        <span class="s2">"Data Valid"</span><span class="p">:</span> <span class="n">series</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+        <span class="s2">"Missing"</span><span class="p">:</span> <span class="n">series</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+        <span class="s2">"Minimum"</span><span class="p">:</span> <span class="n">series</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
+        <span class="s2">"Mean"</span><span class="p">:</span> <span class="n">series</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+        <span class="s2">"Median"</span><span class="p">:</span> <span class="n">series</span><span class="o">.</span><span class="n">median</span><span class="p">(),</span>
+        <span class="s2">"Std"</span><span class="p">:</span> <span class="n">series</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span>
+        <span class="s2">"Maximum"</span><span class="p">:</span> <span class="n">series</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="p">})</span>
+
+<span class="n">stats_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">stats</span><span class="p">)</span>
+
+<span class="n">stats_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Polutan</th>
+      <th>Data Valid</th>
+      <th>Missing</th>
+      <th>Minimum</th>
+      <th>Mean</th>
+      <th>Median</th>
+      <th>Std</th>
+      <th>Maximum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NO₂</td>
+      <td>170</td>
+      <td>194</td>
+      <td>0.000014</td>
+      <td>0.000047</td>
+      <td>0.000042</td>
+      <td>0.000020</td>
+      <td>0.000098</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CO</td>
+      <td>220</td>
+      <td>144</td>
+      <td>0.020222</td>
+      <td>0.029561</td>
+      <td>0.029231</td>
+      <td>0.003870</td>
+      <td>0.045216</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>O₃</td>
+      <td>360</td>
+      <td>4</td>
+      <td>0.109509</td>
+      <td>0.115803</td>
+      <td>0.115565</td>
+      <td>0.002468</td>
+      <td>0.122766</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>SO₂</td>
+      <td>218</td>
+      <td>146</td>
+      <td>-0.001271</td>
+      <td>0.000077</td>
+      <td>0.000075</td>
+      <td>0.000316</td>
+      <td>0.001428</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Format tampilan angka</span>
+
+<span class="n">stats_display</span> <span class="o">=</span> <span class="n">stats_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="p">[</span>
+    <span class="s2">"Minimum"</span><span class="p">,</span>
+    <span class="s2">"Mean"</span><span class="p">,</span>
+    <span class="s2">"Median"</span><span class="p">,</span>
+    <span class="s2">"Std"</span><span class="p">,</span>
+    <span class="s2">"Maximum"</span>
+<span class="p">]:</span>
+    <span class="n">stats_display</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats_display</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.8f</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">else</span> <span class="s2">"-"</span>
+    <span class="p">)</span>
+
+<span class="n">stats_display</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Polutan</th>
+      <th>Data Valid</th>
+      <th>Missing</th>
+      <th>Minimum</th>
+      <th>Mean</th>
+      <th>Median</th>
+      <th>Std</th>
+      <th>Maximum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NO₂</td>
+      <td>170</td>
+      <td>194</td>
+      <td>0.00001351</td>
+      <td>0.00004653</td>
+      <td>0.00004225</td>
+      <td>0.00001990</td>
+      <td>0.00009766</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CO</td>
+      <td>220</td>
+      <td>144</td>
+      <td>0.02022203</td>
+      <td>0.02956117</td>
+      <td>0.02923118</td>
+      <td>0.00386983</td>
+      <td>0.04521559</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>O₃</td>
+      <td>360</td>
+      <td>4</td>
+      <td>0.10950902</td>
+      <td>0.11580302</td>
+      <td>0.11556520</td>
+      <td>0.00246795</td>
+      <td>0.12276649</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>SO₂</td>
+      <td>218</td>
+      <td>146</td>
+      <td>-0.00127074</td>
+      <td>0.00007733</td>
+      <td>0.00007520</td>
+      <td>0.00031595</td>
+      <td>0.00142838</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="analisis-missing-value">
+<h2>4. Analisis Missing Value<a class="headerlink" href="#analisis-missing-value" title="Link to this heading">#</a></h2>
+<p>Missing value menunjukkan interval waktu ketika tidak terdapat nilai valid yang dapat digunakan untuk parameter tertentu.</p>
+<p>Missing value tidak dianggap sebagai nilai nol karena tidak adanya observasi berbeda dengan nilai pengukuran sebesar nol.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Analisis missing value</span>
+
+<span class="n">missing_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">"Polutan"</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">pollutants</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span>
+    <span class="s2">"Missing"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">pollutants</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+    <span class="p">],</span>
+    <span class="s2">"Valid"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">pollutants</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+    <span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">missing_df</span><span class="p">[</span><span class="s2">"Coverage (%)"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">missing_df</span><span class="p">[</span><span class="s2">"Valid"</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">missing_df</span><span class="p">[</span><span class="s2">"Missing (%)"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">missing_df</span><span class="p">[</span><span class="s2">"Missing"</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">missing_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Polutan</th>
+      <th>Missing</th>
+      <th>Valid</th>
+      <th>Coverage (%)</th>
+      <th>Missing (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NO₂</td>
+      <td>194</td>
+      <td>170</td>
+      <td>46.70</td>
+      <td>53.30</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CO</td>
+      <td>144</td>
+      <td>220</td>
+      <td>60.44</td>
+      <td>39.56</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>O₃</td>
+      <td>4</td>
+      <td>360</td>
+      <td>98.90</td>
+      <td>1.10</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>SO₂</td>
+      <td>146</td>
+      <td>218</td>
+      <td>59.89</td>
+      <td>40.11</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">missing_df</span><span class="p">[</span><span class="s2">"Polutan"</span><span class="p">],</span>
+    <span class="n">missing_df</span><span class="p">[</span><span class="s2">"Missing"</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Missing Value Parameter Polutan"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Polutan"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Jumlah Hari Missing"</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span>
+    <span class="n">axis</span><span class="o">=</span><span class="s2">"y"</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/59cfa02c8479615c03807d2bf3ac6aeaf714c4d1ac02f0ca56675463788a2b76.png" src="_images/59cfa02c8479615c03807d2bf3ac6aeaf714c4d1ac02f0ca56675463788a2b76.png" />
+</div>
+</div>
+</section>
+<section id="pemeriksaan-nilai-tidak-biasa">
+<h2>5. Pemeriksaan Nilai Tidak Biasa<a class="headerlink" href="#pemeriksaan-nilai-tidak-biasa" title="Link to this heading">#</a></h2>
+<p>Pada tahap ini dilakukan pemeriksaan awal terhadap nilai yang berada di luar pola umum data.</p>
+<p>Perhatian khusus diberikan pada parameter SO₂ karena pada eksplorasi awal ditemukan nilai negatif.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nilai minimum dan maksimum masing-masing parameter</span>
+
+<span class="k">for</span> <span class="n">pollutant</span><span class="p">,</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">pollutants</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">pollutant</span><span class="si">}</span><span class="s2">: "</span>
+        <span class="sa">f</span><span class="s2">"min = </span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">}</span><span class="s2">, "</span>
+        <span class="sa">f</span><span class="s2">"max = </span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NO₂: min = 1.3505949937098194e-05, max = 9.7659467428457e-05
+CO: min = 0.020222034305334, max = 0.0452155917882919
+O₃: min = 0.1095090210437774, max = 0.1227664873003959
+SO₂: min = -0.001270740525797, max = 0.0014283846830949
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10 nilai SO₂ paling rendah</span>
+
+<span class="n">df</span><span class="p">[</span>
+    <span class="p">[</span><span class="s2">"date"</span><span class="p">,</span> <span class="s2">"so2_mean"</span><span class="p">]</span>
+<span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
+    <span class="s2">"so2_mean"</span><span class="p">,</span>
+    <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>so2_mean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>303</th>
+      <td>2026-07-01</td>
+      <td>-0.001271</td>
+    </tr>
+    <tr>
+      <th>319</th>
+      <td>2026-07-17</td>
+      <td>-0.000987</td>
+    </tr>
+    <tr>
+      <th>281</th>
+      <td>2026-06-09</td>
+      <td>-0.000972</td>
+    </tr>
+    <tr>
+      <th>253</th>
+      <td>2026-05-12</td>
+      <td>-0.000647</td>
+    </tr>
+    <tr>
+      <th>313</th>
+      <td>2026-07-11</td>
+      <td>-0.000627</td>
+    </tr>
+    <tr>
+      <th>314</th>
+      <td>2026-07-12</td>
+      <td>-0.000621</td>
+    </tr>
+    <tr>
+      <th>346</th>
+      <td>2026-08-13</td>
+      <td>-0.000551</td>
+    </tr>
+    <tr>
+      <th>207</th>
+      <td>2026-03-27</td>
+      <td>-0.000466</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025-09-05</td>
+      <td>-0.000386</td>
+    </tr>
+    <tr>
+      <th>288</th>
+      <td>2026-06-16</td>
+      <td>-0.000380</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10 nilai SO₂ paling tinggi</span>
+
+<span class="n">df</span><span class="p">[</span>
+    <span class="p">[</span><span class="s2">"date"</span><span class="p">,</span> <span class="s2">"so2_mean"</span><span class="p">]</span>
+<span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
+    <span class="s2">"so2_mean"</span><span class="p">,</span>
+    <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>so2_mean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>26</th>
+      <td>2025-09-27</td>
+      <td>0.001428</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>2025-10-18</td>
+      <td>0.001299</td>
+    </tr>
+    <tr>
+      <th>342</th>
+      <td>2026-08-09</td>
+      <td>0.000981</td>
+    </tr>
+    <tr>
+      <th>361</th>
+      <td>2026-08-28</td>
+      <td>0.000765</td>
+    </tr>
+    <tr>
+      <th>338</th>
+      <td>2026-08-05</td>
+      <td>0.000760</td>
+    </tr>
+    <tr>
+      <th>291</th>
+      <td>2026-06-19</td>
+      <td>0.000708</td>
+    </tr>
+    <tr>
+      <th>353</th>
+      <td>2026-08-20</td>
+      <td>0.000623</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>2025-12-29</td>
+      <td>0.000592</td>
+    </tr>
+    <tr>
+      <th>278</th>
+      <td>2026-06-06</td>
+      <td>0.000574</td>
+    </tr>
+    <tr>
+      <th>298</th>
+      <td>2026-06-26</td>
+      <td>0.000569</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="analisis-rata-rata-bulanan">
+<h2>6. Analisis Rata-rata Bulanan<a class="headerlink" href="#analisis-rata-rata-bulanan" title="Link to this heading">#</a></h2>
+<p>Analisis rata-rata bulanan digunakan untuk melihat perubahan parameter polutan pada skala waktu yang lebih panjang.</p>
+<p>Agregasi bulanan dilakukan tanpa mengisi missing value. Nilai yang tidak tersedia tetap diperlakukan sebagai missing dan tidak digunakan dalam perhitungan rata-rata.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pastikan tanggal menjadi index</span>
+
+<span class="n">df_monthly</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"date"</span><span class="p">)</span>
+      <span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">"MS"</span><span class="p">)[</span>
+          <span class="p">[</span>
+              <span class="s2">"no2_mean"</span><span class="p">,</span>
+              <span class="s2">"co_mean"</span><span class="p">,</span>
+              <span class="s2">"o3_mean"</span><span class="p">,</span>
+              <span class="s2">"so2_mean"</span>
+          <span class="p">]</span>
+      <span class="p">]</span>
+      <span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="n">df_monthly</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>no2_mean</th>
+      <th>co_mean</th>
+      <th>o3_mean</th>
+      <th>so2_mean</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2025-09-01</th>
+      <td>0.000040</td>
+      <td>0.029711</td>
+      <td>0.114380</td>
+      <td>0.000125</td>
+    </tr>
+    <tr>
+      <th>2025-10-01</th>
+      <td>0.000054</td>
+      <td>0.032990</td>
+      <td>0.116523</td>
+      <td>0.000084</td>
+    </tr>
+    <tr>
+      <th>2025-11-01</th>
+      <td>0.000041</td>
+      <td>0.028576</td>
+      <td>0.115483</td>
+      <td>0.000065</td>
+    </tr>
+    <tr>
+      <th>2025-12-01</th>
+      <td>0.000036</td>
+      <td>0.027718</td>
+      <td>0.114927</td>
+      <td>0.000161</td>
+    </tr>
+    <tr>
+      <th>2026-01-01</th>
+      <td>0.000028</td>
+      <td>0.028105</td>
+      <td>0.113041</td>
+      <td>0.000122</td>
+    </tr>
+    <tr>
+      <th>2026-02-01</th>
+      <td>0.000023</td>
+      <td>0.028034</td>
+      <td>0.113393</td>
+      <td>0.000074</td>
+    </tr>
+    <tr>
+      <th>2026-03-01</th>
+      <td>0.000027</td>
+      <td>0.029861</td>
+      <td>0.114772</td>
+      <td>-0.000020</td>
+    </tr>
+    <tr>
+      <th>2026-04-01</th>
+      <td>0.000047</td>
+      <td>0.028042</td>
+      <td>0.117085</td>
+      <td>0.000087</td>
+    </tr>
+    <tr>
+      <th>2026-05-01</th>
+      <td>0.000047</td>
+      <td>0.029571</td>
+      <td>0.116397</td>
+      <td>0.000044</td>
+    </tr>
+    <tr>
+      <th>2026-06-01</th>
+      <td>0.000057</td>
+      <td>0.027942</td>
+      <td>0.116056</td>
+      <td>0.000100</td>
+    </tr>
+    <tr>
+      <th>2026-07-01</th>
+      <td>0.000056</td>
+      <td>0.030885</td>
+      <td>0.117658</td>
+      <td>-0.000083</td>
+    </tr>
+    <tr>
+      <th>2026-08-01</th>
+      <td>0.000045</td>
+      <td>0.030565</td>
+      <td>0.119799</td>
+      <td>0.000183</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monthly_display</span> <span class="o">=</span> <span class="n">df_monthly</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">monthly_display</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">monthly_display</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"%Y-%m"</span><span class="p">)</span>
+
+<span class="n">monthly_display</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>no2_mean</th>
+      <th>co_mean</th>
+      <th>o3_mean</th>
+      <th>so2_mean</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2025-09</th>
+      <td>0.000040</td>
+      <td>0.029711</td>
+      <td>0.114380</td>
+      <td>0.000125</td>
+    </tr>
+    <tr>
+      <th>2025-10</th>
+      <td>0.000054</td>
+      <td>0.032990</td>
+      <td>0.116523</td>
+      <td>0.000084</td>
+    </tr>
+    <tr>
+      <th>2025-11</th>
+      <td>0.000041</td>
+      <td>0.028576</td>
+      <td>0.115483</td>
+      <td>0.000065</td>
+    </tr>
+    <tr>
+      <th>2025-12</th>
+      <td>0.000036</td>
+      <td>0.027718</td>
+      <td>0.114927</td>
+      <td>0.000161</td>
+    </tr>
+    <tr>
+      <th>2026-01</th>
+      <td>0.000028</td>
+      <td>0.028105</td>
+      <td>0.113041</td>
+      <td>0.000122</td>
+    </tr>
+    <tr>
+      <th>2026-02</th>
+      <td>0.000023</td>
+      <td>0.028034</td>
+      <td>0.113393</td>
+      <td>0.000074</td>
+    </tr>
+    <tr>
+      <th>2026-03</th>
+      <td>0.000027</td>
+      <td>0.029861</td>
+      <td>0.114772</td>
+      <td>-0.000020</td>
+    </tr>
+    <tr>
+      <th>2026-04</th>
+      <td>0.000047</td>
+      <td>0.028042</td>
+      <td>0.117085</td>
+      <td>0.000087</td>
+    </tr>
+    <tr>
+      <th>2026-05</th>
+      <td>0.000047</td>
+      <td>0.029571</td>
+      <td>0.116397</td>
+      <td>0.000044</td>
+    </tr>
+    <tr>
+      <th>2026-06</th>
+      <td>0.000057</td>
+      <td>0.027942</td>
+      <td>0.116056</td>
+      <td>0.000100</td>
+    </tr>
+    <tr>
+      <th>2026-07</th>
+      <td>0.000056</td>
+      <td>0.030885</td>
+      <td>0.117658</td>
+      <td>-0.000083</td>
+    </tr>
+    <tr>
+      <th>2026-08</th>
+      <td>0.000045</td>
+      <td>0.030565</td>
+      <td>0.119799</td>
+      <td>0.000183</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="interpretasi-awal-rata-rata-bulanan">
+<h3>Interpretasi Awal Rata-rata Bulanan<a class="headerlink" href="#interpretasi-awal-rata-rata-bulanan" title="Link to this heading">#</a></h3>
+<p>Rata-rata bulanan digunakan untuk mengamati perubahan umum setiap parameter sepanjang periode penelitian.</p>
+<p>Interpretasi dilakukan dengan membandingkan perubahan nilai antarbulan dan tidak digunakan untuk menyimpulkan hubungan sebab-akibat dengan faktor eksternal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">pollutants</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">df_monthly</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+        <span class="n">df_monthly</span><span class="p">[</span><span class="n">column</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"Rata-rata Bulanan </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2"> "</span>
+        <span class="s2">"Desa Sidojangkung"</span>
+    <span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Bulan"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2"> (mol/m²)"</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/11ba298931df66b9b22813e20cd0f67d1dcd74ae903bc95df3b22cc004d52da6.png" src="_images/11ba298931df66b9b22813e20cd0f67d1dcd74ae903bc95df3b22cc004d52da6.png" />
+<img alt="_images/04368ef592d5105b253fca3a9c269d01ae1798ef46fc57f0cf72be1a7d8a0e0e.png" src="_images/04368ef592d5105b253fca3a9c269d01ae1798ef46fc57f0cf72be1a7d8a0e0e.png" />
+<img alt="_images/8c724957a94f73294c2b358b325a344db93f5582a1572b905c51a95d69cc85a9.png" src="_images/8c724957a94f73294c2b358b325a344db93f5582a1572b905c51a95d69cc85a9.png" />
+<img alt="_images/2ef8686f691204b3b1097c1c14c9817060a10624fbef6adbeccae82855091b7d.png" src="_images/2ef8686f691204b3b1097c1c14c9817060a10624fbef6adbeccae82855091b7d.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="visualisasi-time-series">
+<h2>7. Visualisasi Time Series<a class="headerlink" href="#visualisasi-time-series" title="Link to this heading">#</a></h2>
+<p>Time series digunakan untuk melihat perubahan nilai parameter polutan dari hari ke hari selama periode pengamatan.</p>
+<p>Nilai missing tidak diubah menjadi nol sehingga gap pada grafik tetap menunjukkan tidak tersedianya observasi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">pollutants</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">df</span><span class="p">[</span><span class="s2">"date"</span><span class="p">],</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"Time Series </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2"> "</span>
+        <span class="s2">"Desa Sidojangkung"</span>
+    <span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Tanggal"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2"> (mol/m²)"</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4ff6e72cdc4e19d86c0b36086268107d3f734fa4aab7521cf3b3312449f3f205.png" src="_images/4ff6e72cdc4e19d86c0b36086268107d3f734fa4aab7521cf3b3312449f3f205.png" />
+<img alt="_images/ebca91a3a39ea79ed75b2e55150ebd152cc728ba4558dd37bb13f090359dfc18.png" src="_images/ebca91a3a39ea79ed75b2e55150ebd152cc728ba4558dd37bb13f090359dfc18.png" />
+<img alt="_images/1bab00ec6db467aa2d40f10787b08dff5b636ebfd349117280953ed279d079a6.png" src="_images/1bab00ec6db467aa2d40f10787b08dff5b636ebfd349117280953ed279d079a6.png" />
+<img alt="_images/8826abd0572965bdc528f583dcb80e8f0557f09bb52af119f24e3f61d8454bd3.png" src="_images/8826abd0572965bdc528f583dcb80e8f0557f09bb52af119f24e3f61d8454bd3.png" />
+</div>
+</div>
+</section>
+<section id="kelengkapan-data-berdasarkan-bulan">
+<h2>8. Kelengkapan Data Berdasarkan Bulan<a class="headerlink" href="#kelengkapan-data-berdasarkan-bulan" title="Link to this heading">#</a></h2>
+<p>Selain menghitung jumlah missing secara keseluruhan, kelengkapan data diperiksa berdasarkan bulan untuk mengetahui apakah terdapat periode tertentu dengan jumlah observasi yang lebih sedikit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monthly_coverage</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">pollutant</span><span class="p">,</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">pollutants</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+    <span class="n">coverage</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"date"</span><span class="p">)[</span><span class="n">column</span><span class="p">]</span>
+          <span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">"MS"</span><span class="p">)</span>
+          <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">monthly_coverage</span><span class="p">[</span><span class="n">pollutant</span><span class="p">]</span> <span class="o">=</span> <span class="n">coverage</span>
+
+<span class="n">monthly_coverage_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">monthly_coverage</span>
+<span class="p">)</span>
+
+<span class="n">monthly_coverage_df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">monthly_coverage_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"%Y-%m"</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">monthly_coverage_df</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NO₂</th>
+      <th>CO</th>
+      <th>O₃</th>
+      <th>SO₂</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2025-09</th>
+      <td>56.67</td>
+      <td>70.00</td>
+      <td>93.33</td>
+      <td>76.67</td>
+    </tr>
+    <tr>
+      <th>2025-10</th>
+      <td>48.39</td>
+      <td>54.84</td>
+      <td>100.00</td>
+      <td>54.84</td>
+    </tr>
+    <tr>
+      <th>2025-11</th>
+      <td>10.00</td>
+      <td>23.33</td>
+      <td>100.00</td>
+      <td>20.00</td>
+    </tr>
+    <tr>
+      <th>2025-12</th>
+      <td>35.48</td>
+      <td>48.39</td>
+      <td>100.00</td>
+      <td>45.16</td>
+    </tr>
+    <tr>
+      <th>2026-01</th>
+      <td>16.13</td>
+      <td>45.16</td>
+      <td>100.00</td>
+      <td>35.48</td>
+    </tr>
+    <tr>
+      <th>2026-02</th>
+      <td>14.29</td>
+      <td>28.57</td>
+      <td>100.00</td>
+      <td>46.43</td>
+    </tr>
+    <tr>
+      <th>2026-03</th>
+      <td>29.03</td>
+      <td>54.84</td>
+      <td>100.00</td>
+      <td>58.06</td>
+    </tr>
+    <tr>
+      <th>2026-04</th>
+      <td>46.67</td>
+      <td>53.33</td>
+      <td>100.00</td>
+      <td>53.33</td>
+    </tr>
+    <tr>
+      <th>2026-05</th>
+      <td>41.94</td>
+      <td>83.87</td>
+      <td>96.77</td>
+      <td>51.61</td>
+    </tr>
+    <tr>
+      <th>2026-06</th>
+      <td>90.00</td>
+      <td>80.00</td>
+      <td>100.00</td>
+      <td>93.33</td>
+    </tr>
+    <tr>
+      <th>2026-07</th>
+      <td>77.42</td>
+      <td>83.87</td>
+      <td>96.77</td>
+      <td>87.10</td>
+    </tr>
+    <tr>
+      <th>2026-08</th>
+      <td>93.33</td>
+      <td>96.67</td>
+      <td>100.00</td>
+      <td>96.67</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="temuan-data-understanding">
+<h2>9. Temuan Data Understanding<a class="headerlink" href="#temuan-data-understanding" title="Link to this heading">#</a></h2>
+<p>Berdasarkan hasil eksplorasi dataset, diperoleh beberapa temuan utama:</p>
+<ol class="arabic simple">
+<li><p>Kelengkapan data berbeda antarparameter polutan. O₃ memiliki coverage paling tinggi sebesar 98,90%, sedangkan NO₂ memiliki coverage paling rendah sebesar 46,70%.</p></li>
+<li><p>NO₂, CO, dan SO₂ memiliki missing value dalam jumlah cukup besar, sedangkan O₃ hanya memiliki sedikit missing value.</p></li>
+<li><p>Ditemukan nilai negatif pada parameter SO₂. Nilai tersebut dicatat sebagai karakteristik data yang perlu diperiksa lebih lanjut pada tahap Data Preparation dan tidak langsung diubah pada tahap Data Understanding.</p></li>
+<li><p>Nilai masing-masing parameter menunjukkan karakteristik temporal yang berbeda berdasarkan hasil analisis time series dan rata-rata bulanan.</p></li>
+<li><p>Karena data berasal dari Sentinel-5P/TROPOMI, hasil pengamatan merepresentasikan parameter atmosfer berbasis satelit dan tidak dapat langsung disamakan dengan pengukuran kualitas udara permukaan dari stasiun pemantauan.</p></li>
+<li><p>Missing value dan nilai yang tidak biasa akan menjadi perhatian pada tahap Data Preparation, khususnya dalam proses cleaning dan pemeriksaan outlier.</p></li>
+</ol>
+</section>
+<section id="kesimpulan">
+<h2>10. Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h2>
+<p>Data Understanding berhasil dilakukan terhadap dataset parameter atmosfer Desa Sidojangkung, Kecamatan Menganti, Kabupaten Gresik, dengan periode pengamatan 1 September 2025 sampai 30 Agustus 2026.</p>
+<p>Dataset terdiri dari empat parameter, yaitu NO₂, CO, O₃, dan SO₂. Hasil eksplorasi menunjukkan bahwa tingkat kelengkapan data berbeda antarparameter. O₃ memiliki coverage paling tinggi, sedangkan NO₂ memiliki coverage paling rendah.</p>
+<p>Eksplorasi juga menemukan missing value pada beberapa parameter serta nilai negatif pada SO₂. Temuan tersebut dipertahankan pada tahap Data Understanding agar karakteristik data asli tetap terlihat dan dapat ditangani secara tepat pada tahap Data Preparation.</p>
+<p>Analisis statistik, rata-rata bulanan, dan time series menunjukkan bahwa masing-masing parameter memiliki pola temporal yang berbeda. Hasil ini menjadi dasar untuk tahap berikutnya, yaitu Data Preparation, yang meliputi pemeriksaan dan penanganan missing value, cleaning, serta pemeriksaan outlier.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="business_understanding.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Business Understanding</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-parameter-polutan-atmosfer-desa-sidojangkung">Analisis Parameter Polutan Atmosfer Desa Sidojangkung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-data-understanding">1. Tujuan Data Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-dataset">2. Deskripsi Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif">3. Statistik Deskriptif</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-missing-value">4. Analisis Missing Value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pemeriksaan-nilai-tidak-biasa">5. Pemeriksaan Nilai Tidak Biasa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-rata-rata-bulanan">6. Analisis Rata-rata Bulanan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi-awal-rata-rata-bulanan">Interpretasi Awal Rata-rata Bulanan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-time-series">7. Visualisasi Time Series</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kelengkapan-data-berdasarkan-bulan">8. Kelengkapan Data Berdasarkan Bulan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temuan-data-understanding">9. Temuan Data Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">10. Kesimpulan</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Verdi Setyawan Ardiansyah Putra
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
