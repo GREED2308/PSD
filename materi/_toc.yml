@@ -8,3 +8,5 @@ chapters:
   sections:
   - file: business_understanding
   - file: data_understanding
+- file: PostgreSQL-Aiven
+- file: contoh_perhitungan_statistik
