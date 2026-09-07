@@ -4,7 +4,7 @@
 title: PSD (Proyek Sains Data)
 author: Verdi Setyawan Ardiansyah Putra
 copyright: "2026"
-logo: archlinux-logo.png
+logo: logo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
