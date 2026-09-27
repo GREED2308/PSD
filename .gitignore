@@ -6,6 +6,9 @@ __pycache__/
 venv/
 .venv/
 
+# Dataset besar
+data/raw/
+
 # Secrets
 .env
 

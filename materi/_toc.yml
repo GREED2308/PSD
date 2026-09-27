@@ -10,3 +10,4 @@ chapters:
   - file: data_understanding
 - file: PostgreSQL-Aiven
 - file: contoh_perhitungan_statistik
+- file: Analisis_TimeSeries_PCA_KMeans
