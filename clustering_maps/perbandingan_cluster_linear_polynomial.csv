@@ -1,0 +1,38 @@
+id_linear,nama_linear,daerah_linear,Cluster_linear,name_key,id_polynomial,nama_polynomial,daerah_polynomial,Cluster_polynomial,_merge,same_cluster
+19,A.Choiril Anwar El-Asfihani Risydan,"Banyu Ajuh, Perumnas, Kamal",cluster_1,achoirilanwarelasfihanirisydan,20,A.Choiril Anwar El-Asfihani Risydan,"Banyu Ajuh, Perumnas, Kamal",cluster_1,both,True
+14,Ahmad Dafi Zidni Alfarisi,"Paciran, Lamongan",cluster_1,ahmaddafizidnialfarisi,13,Ahmad Dafi Zidni Alfarisi,"Paciran, Lamongan",cluster_2,both,False
+15,AHMAD MAULANA ISHAQ,"Kertosono, Nganjuk",cluster_1,ahmadmaulanaishaq,14,AHMAD MAULANA ISHAQ,"Kertosono, Nganjuk",cluster_2,both,False
+12,Ahmad Syahrul Farihin,"Gresik Kota, Gresik",cluster_1,ahmadsyahrulfarihin,11,Ahmad Syahrul Farihin,"Gresik Kota, Gresik",cluster_1,both,True
+2,Ainur Raftuzzaki,Nunukan,cluster_0,ainurraftuzzaki,2,Ainur Raftuzzaki,Nunukan,cluster_0,both,True
+22,Alghifari Amar Mukhasyafah,"Sidoarjo, Wonoayu",cluster_1,alghifariamarmukhasyafah,36,Alghifari Amar Mukhasyafah,"Sidoarjo, Wonoayu",cluster_2,both,False
+33,Alifah Sayyidaturrhohma,"Kota Sumenep, Sumenep",cluster_2,alifahsayyidaturrhohma,32,Alifah Sayyidaturrhohma,"Kota Sumenep, Sumenep",cluster_2,both,True
+25,dedy Nurohim,"sambeng, lamongan",cluster_1,dedynurohim,24,Dedy Nurohim,"sambeng, lamongan",cluster_2,both,False
+38,Deo Candra Saputra,"Widodaren, Ngawi",cluster_1,deocandrasaputra,38,Deo Candra Saputra,"Widodaren, Ngawi",cluster_0,both,False
+42,Dewi Geizya,"Banyuajuh kamal, Bangkalan",cluster_1,dewigeizya,42,Dewi Geizya,"Banyuajuh kamal, Bangkalan",cluster_1,both,True
+30,Fahdimas akmal,"Kwanyar, Bangkalan",cluster_1,fahdimasakmal,29,Fahdimas akmal,"Kwanyar, Bangkalan",cluster_2,both,False
+40,Fathan Ruhul Alam,"Warudoyong, Kota Sukabumi",cluster_1,fathanruhulalam,40,Fathan Ruhul Alam,"Warudoyong, Kota Sukabumi",cluster_2,both,False
+43,Fathul Aziz Saifuddin,"Dukun, Gresik",cluster_1,fathulazizsaifuddin,43,Fathul Aziz Saifuddin,"Dukun, Gresik",cluster_2,both,False
+37,Kurnia Maulinda Sari,"Labang, Bangkalan",cluster_2,kurniamaulindasari,37,Kurnia Maulinda Sari,"Labang, Bangkalan",cluster_1,both,False
+41,Laila Maghfiroh,"Kamal, Bangkalan",cluster_1,lailamaghfiroh,41,Laila Maghfiroh,"Kamal, Bangkalan",cluster_1,both,True
+34,Lailatul Hasanah,"Socah, Bangkalan",cluster_2,lailatulhasanah,33,Lailatul Hasanah,"Socah, Bangkalan",cluster_2,both,True
+35,Magdalena Jovita Hatuopar,"Pilangkenceng, Madiun",cluster_0,magdalenajovitahatuopar,34,Magdalena Jovita Hatuopar,"Pilangkenceng, Madiun",cluster_0,both,True
+26,Marshella Aulia Putri,"Kec. Kalianget, Sumenep",cluster_1,marshellaauliaputri,25,Marshella Aulia Putri,"Kec. Kalianget, Sumenep",cluster_0,both,False
+23,M. Fatihul Umam,"Kwanyar, Bangkalan",cluster_1,mfatihulumam,22,M. Fatihul Umam,"Kwanyar, Bangkalan",cluster_2,both,False
+4,M. Hendrik Purwanto,"Sreseh, Sampang",cluster_1,mhendrikpurwanto,4,M. Hendrik Purwanto,"Sreseh, Sampang",cluster_2,both,False
+21,Mochammad Zaenal Abidin,"Widang, Tuban",cluster_1,mochammadzaenalabidin,21,Mochammad Zaenal Abidin,"Widang, Tuban",cluster_2,both,False
+36,Mohammad Aziz Huzaini,"Tanah Merah, Bangkalan",cluster_0,mohammadazizhuzaini,35,Mohammad Aziz Huzaini,"Tanah Merah, Bangkalan",cluster_2,both,False
+44,Moh Rafie Nazar J,"Kecamatan Bangkalan,Bangkalan",cluster_1,mohrafienazarj,44,Moh Rafie Nazar J,"Kecamatan Bangkalan,Bangkalan",cluster_2,both,False
+1,Muhammad Ali Murtadho,Baron Nganjuk,cluster_1,muhammadalimurtadho,1,Muhammad Ali Murtadho,Baron Nganjuk,cluster_2,both,False
+20,Muhammad Isa,"Bandung - Jogoroto, Jombang",cluster_1,muhammadisa,19,Muhammad Isa,"Bandung - Jogoroto, Jombang",cluster_2,both,False
+31,Muhammad izzul Millah Aqil,"Wonokromo, Surabaya",cluster_1,muhammadizzulmillahaqil,30,Muhammad izzul Millah Aqil,"Wonokromo, Surabaya",cluster_2,both,False
+10,Muhammad Zaidan Nabil Rafi,"Kamal, Bangkalan",cluster_1,muhammadzaidannabilrafi,9,Muhammad Zaidan Nabil Rafi,"Kamal, Bangkalan",cluster_1,both,True
+29,Nurhabibatul Umah,"Kerek, Tuban",cluster_1,nurhabibatulumah,28,Nurhabibatul Umah,"Kerek, Tuban",cluster_2,both,False
+6,Okan Syailendra wahyudi,"Manyar, Gresik",cluster_1,okansyailendrawahyudi,6,Okan Syailendra wahyudi,"Manyar, Gresik",cluster_1,both,True
+28,Rachelia Andini Tendean,"Tikala, Manado",cluster_0,racheliaandinitendean,27,Rachelia Andini Tendean,"Tikala, Manado",cluster_0,both,True
+16,Rahardian Ananta,"Jabon , Sidoarjo",cluster_2,rahardianananta,15,Rahardian Ananta,"Jabon, Sidoarjo",cluster_0,both,False
+13,Rian Renaldy,"Waru, Pamekasan",cluster_1,rianrenaldy,12,Rian Renaldy,"Waru, Pamekasan",cluster_2,both,False
+39,Rifqi Fairurrafi,"Bangkalan, Bangkalan",cluster_1,rifqifairurrafi,39,Rifqi Fairurrafi,"Bangkalan, Bangkalan",cluster_2,both,False
+32,Riska Nana Nuril Fadilah,"Asemrowo, Surabaya",cluster_1,riskanananurilfadilah,31,Riska Nana Nuril Fadilah,"Asemrowo, Surabaya",cluster_1,both,True
+27,Robbaniyah Umdatun Ni'mah,"Cerme, Gresik",cluster_0,robbaniyahumdatunnimah,26,Robbaniyah Umdatun Ni'mah,"Cerme, Gresik",cluster_1,both,False
+11,Triswanti Jannatul Ma'wa,Kedungpring Lamongan,cluster_1,triswantijannatulmawa,10,Triswanti Jannatul Ma'wa,Kedungpring Lamongan,cluster_2,both,False
+17,Verdi Setyawan Ardiansyah Putra,"Menganti, Gresik",cluster_1,verdisetyawanardiansyahputra,16,Verdi Setyawan Ardiansyah Putra,"Menganti, Gresik",cluster_1,both,True

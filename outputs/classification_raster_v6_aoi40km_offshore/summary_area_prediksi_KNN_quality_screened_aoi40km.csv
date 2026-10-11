@@ -1,0 +1,7 @@
+﻿class_id,class_name,pixel_count,predicted_area_ha,share_of_valid_predicted_area_pct,scope
+1,Sawah,1578099,15780.99,9.863422050228046,AOI percontohan saja; bukan luas kelas seluruh Jawa Timur
+2,Bangunan,3181406,31814.06,19.88439894526757,AOI percontohan saja; bukan luas kelas seluruh Jawa Timur
+3,Mangrove,329021,3290.21,2.0564444856679343,AOI percontohan saja; bukan luas kelas seluruh Jawa Timur
+4,Lahan hijau,3774870,37748.7,23.593663005137408,AOI percontohan saja; bukan luas kelas seluruh Jawa Timur
+5,Perairan terbuka / laut,5723879,57238.79,35.77534384182314,AOI percontohan saja; bukan luas kelas seluruh Jawa Timur
+6,Danau / ranu,1412233,14122.33,8.826727671875911,AOI percontohan saja; bukan luas kelas seluruh Jawa Timur

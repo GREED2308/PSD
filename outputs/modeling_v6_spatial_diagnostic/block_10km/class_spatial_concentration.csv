@@ -1,0 +1,13 @@
+﻿block_size_km,dataset_variant,class_name,sample_count,blocks_containing_class,top_block_sample_count,top_block_share_of_class,necessary_condition_class_in_both_sides,block_counts_desc
+10,all_reviewed,sawah,50,1,50,1.0,False,B4_6:50
+10,all_reviewed,bangunan,51,1,51,1.0,False,B3_4:51
+10,all_reviewed,mangrove,49,3,36,0.7346938775510204,True,B3_1:36;B3_2:8;B1_3:5
+10,all_reviewed,lahan_hijau,48,6,18,0.375,True,B4_5:18;B4_6:11;B5_6:10;B3_5:3;B5_4:3;B5_5:3
+10,all_reviewed,laut,40,21,6,0.15,True,B6_6:6;B6_7:5;B4_3:5;B3_3:5;B7_6:2;B4_2:2;B16_11:1;B14_10:1;B12_11:1;B-2_11:1;B15_5:1;B18_10:1;B1_10:1;B3_11:1;B3_2:1;B21_11:1;B23_10:1;B5_10:1;B7_11:1;B7_7:1;B9_10:1
+10,all_reviewed,danau,65,20,15,0.23076923076923078,True,B7_6:15;B11_3:12;B15_5:5;B-1_2:5;B9_-5:4;B9_-6:3;B7_4:3;B0_3:2;B8_-6:2;B1_3:2;B2_2:2;B4_-6:2;B10_-6:1;B5_-3:1;B3_2:1;B2_3:1;B5_-7:1;B8_-5:1;B8_4:1;B8_-7:1
+10,quality_screened,sawah,22,1,22,1.0,False,B4_6:22
+10,quality_screened,bangunan,51,1,51,1.0,False,B3_4:51
+10,quality_screened,mangrove,49,3,36,0.7346938775510204,True,B3_1:36;B3_2:8;B1_3:5
+10,quality_screened,lahan_hijau,48,6,18,0.375,True,B4_5:18;B4_6:11;B5_6:10;B3_5:3;B5_4:3;B5_5:3
+10,quality_screened,laut,40,21,6,0.15,True,B6_6:6;B6_7:5;B4_3:5;B3_3:5;B7_6:2;B4_2:2;B16_11:1;B14_10:1;B12_11:1;B-2_11:1;B15_5:1;B18_10:1;B1_10:1;B3_11:1;B3_2:1;B21_11:1;B23_10:1;B5_10:1;B7_11:1;B7_7:1;B9_10:1
+10,quality_screened,danau,45,13,12,0.26666666666666666,True,B11_3:12;B7_6:9;B-1_2:5;B15_5:5;B7_4:3;B1_3:2;B0_3:2;B2_2:2;B2_3:1;B5_-3:1;B3_2:1;B8_-6:1;B8_4:1

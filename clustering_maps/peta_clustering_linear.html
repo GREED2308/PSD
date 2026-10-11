@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_dc7d4a270c9be26eaa36c07a18a31d80 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+</head>
+<body>
+    
+    
+    <div style='position:fixed;bottom:45px;left:20px;z-index:9999;background:#fff;padding:14px 18px;
+                border-radius:10px;box-shadow:0 3px 14px rgba(0,0,0,.18);font-family:Arial;min-width:240px;'>
+      <div style='font-size:16px;font-weight:700;margin-bottom:4px;'>Peta Clustering Linear</div>
+      <div style='font-size:12px;color:#666;margin-bottom:10px;'>PCA 37 • K=3 • 37 mahasiswa</div>
+      <div style='display:flex;align-items:center;margin:5px 0;'><span style='display:inline-block;width:13px;height:13px;border-radius:50%;background:#e53935;margin-right:7px;'></span><span>Cluster 0 — 5 mahasiswa</span></div><div style='display:flex;align-items:center;margin:5px 0;'><span style='display:inline-block;width:13px;height:13px;border-radius:50%;background:#1e88e5;margin-right:7px;'></span><span>Cluster 1 — 28 mahasiswa</span></div><div style='display:flex;align-items:center;margin:5px 0;'><span style='display:inline-block;width:13px;height:13px;border-radius:50%;background:#43a047;margin-right:7px;'></span><span>Cluster 2 — 4 mahasiswa</span></div>
+      <div style='font-size:11px;color:#888;margin-top:9px;'>Klik marker untuk detail mahasiswa.</div>
+    </div>
+    
+    
+            <div class="folium-map" id="map_dc7d4a270c9be26eaa36c07a18a31d80" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_dc7d4a270c9be26eaa36c07a18a31d80 = L.map(
+                "map_dc7d4a270c9be26eaa36c07a18a31d80",
+                {
+                    center: [-6.632083377891064, 112.92003612673751],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_dc7d4a270c9be26eaa36c07a18a31d80);
+
+            
+
+        
+    
+            var tile_layer_114f8570edfbf9432d5bfc53fd7916e6 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_114f8570edfbf9432d5bfc53fd7916e6.addTo(map_dc7d4a270c9be26eaa36c07a18a31d80);
+        
+    
+            var tile_layer_c5bd59f83fd0a764cb8399c7e9f4049e = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c5bd59f83fd0a764cb8399c7e9f4049e.addTo(map_dc7d4a270c9be26eaa36c07a18a31d80);
+        
+    
+            var tile_layer_4a2657929bc68fda40aae0eb97953931 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_4a2657929bc68fda40aae0eb97953931.addTo(map_dc7d4a270c9be26eaa36c07a18a31d80);
+        
+    
+            var feature_group_c706f680316db4f8157d04a95019510e = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_6fc5f996a0193f1bfbb308acac6c3c16 = L.marker(
+                [4.133775735663064, 117.6569568690447],
+                {
+}
+            ).addTo(feature_group_c706f680316db4f8157d04a95019510e);
+        
+    
+            var div_icon_98cee07941df76b8d17732e23c0a5448 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#e53935;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC0\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_c501672703362237baf3eeb6f4f20a8a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_790a9f955f9297f1302b31300fcdce65 = $(`<div id="html_790a9f955f9297f1302b31300fcdce65" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Ainur Raftuzzaki</b><hr style='margin:4px 0;'><b>Daerah:</b> Nunukan<br><b>Cluster:</b> Cluster 0<br><b>Koordinat:</b> 4.13378, 117.65696</div></div>`)[0];
+                popup_c501672703362237baf3eeb6f4f20a8a.setContent(html_790a9f955f9297f1302b31300fcdce65);
+            
+        
+
+        marker_6fc5f996a0193f1bfbb308acac6c3c16.bindPopup(popup_c501672703362237baf3eeb6f4f20a8a)
+        ;
+
+        
+    
+    
+            marker_6fc5f996a0193f1bfbb308acac6c3c16.bindTooltip(
+                `<div>
+                     Ainur Raftuzzaki — Cluster 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6fc5f996a0193f1bfbb308acac6c3c16.setIcon(div_icon_98cee07941df76b8d17732e23c0a5448);
+            
+    
+            var marker_765c46839d147c314d3902741f00046a = L.marker(
+                [-7.226767117823847, 112.55515064509419],
+                {
+}
+            ).addTo(feature_group_c706f680316db4f8157d04a95019510e);
+        
+    
+            var div_icon_f81df4c9667b99de9e1014cfc86cf7ac = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#e53935;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC0\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_7028f1d129fcbc3afa129ba3f2408803 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8a7e4d82e98576daa95a45d3d716d344 = $(`<div id="html_8a7e4d82e98576daa95a45d3d716d344" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Robbaniyah Umdatun Ni'mah</b><hr style='margin:4px 0;'><b>Daerah:</b> Cerme, Gresik<br><b>Cluster:</b> Cluster 0<br><b>Koordinat:</b> -7.22677, 112.55515</div></div>`)[0];
+                popup_7028f1d129fcbc3afa129ba3f2408803.setContent(html_8a7e4d82e98576daa95a45d3d716d344);
+            
+        
+
+        marker_765c46839d147c314d3902741f00046a.bindPopup(popup_7028f1d129fcbc3afa129ba3f2408803)
+        ;
+
+        
+    
+    
+            marker_765c46839d147c314d3902741f00046a.bindTooltip(
+                `<div>
+                     Robbaniyah Umdatun Ni'mah — Cluster 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_765c46839d147c314d3902741f00046a.setIcon(div_icon_f81df4c9667b99de9e1014cfc86cf7ac);
+            
+    
+            var marker_aa9320eddd27eef3745a4fbbe87fb4b0 = L.marker(
+                [1.4842001822059974, 124.8572812317023],
+                {
+}
+            ).addTo(feature_group_c706f680316db4f8157d04a95019510e);
+        
+    
+            var div_icon_4a498ee7bf0e939f2360fbb277d51b2c = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#e53935;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC0\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_ee644d2d8254e03574e32835286f35bd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a24538afa9025fb37dee2446a440cc00 = $(`<div id="html_a24538afa9025fb37dee2446a440cc00" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Rachelia Andini Tendean</b><hr style='margin:4px 0;'><b>Daerah:</b> Tikala, Manado<br><b>Cluster:</b> Cluster 0<br><b>Koordinat:</b> 1.48420, 124.85728</div></div>`)[0];
+                popup_ee644d2d8254e03574e32835286f35bd.setContent(html_a24538afa9025fb37dee2446a440cc00);
+            
+        
+
+        marker_aa9320eddd27eef3745a4fbbe87fb4b0.bindPopup(popup_ee644d2d8254e03574e32835286f35bd)
+        ;
+
+        
+    
+    
+            marker_aa9320eddd27eef3745a4fbbe87fb4b0.bindTooltip(
+                `<div>
+                     Rachelia Andini Tendean — Cluster 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_aa9320eddd27eef3745a4fbbe87fb4b0.setIcon(div_icon_4a498ee7bf0e939f2360fbb277d51b2c);
+            
+    
+            var marker_e1ac339a8857445de09ad552bab225e8 = L.marker(
+                [-7.498604472085275, 111.6666162113795],
+                {
+}
+            ).addTo(feature_group_c706f680316db4f8157d04a95019510e);
+        
+    
+            var div_icon_9f4b72a9e8ab128d354e74a1f0500a12 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#e53935;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC0\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_370bdcc2d21534d12702374d556d23ab = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9dcb079c2164637805ecf71c97a17f5f = $(`<div id="html_9dcb079c2164637805ecf71c97a17f5f" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Magdalena Jovita Hatuopar</b><hr style='margin:4px 0;'><b>Daerah:</b> Pilangkenceng, Madiun<br><b>Cluster:</b> Cluster 0<br><b>Koordinat:</b> -7.49860, 111.66662</div></div>`)[0];
+                popup_370bdcc2d21534d12702374d556d23ab.setContent(html_9dcb079c2164637805ecf71c97a17f5f);
+            
+        
+
+        marker_e1ac339a8857445de09ad552bab225e8.bindPopup(popup_370bdcc2d21534d12702374d556d23ab)
+        ;
+
+        
+    
+    
+            marker_e1ac339a8857445de09ad552bab225e8.bindTooltip(
+                `<div>
+                     Magdalena Jovita Hatuopar — Cluster 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e1ac339a8857445de09ad552bab225e8.setIcon(div_icon_9f4b72a9e8ab128d354e74a1f0500a12);
+            
+    
+            var marker_190f5c4578fa9207d7d220641dde549f = L.marker(
+                [-7.093944569227658, 112.83365189055576],
+                {
+}
+            ).addTo(feature_group_c706f680316db4f8157d04a95019510e);
+        
+    
+            var div_icon_947786c9841577b32c4c8d4f5205a82f = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#e53935;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC0\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_e0e2ca995bfc9aed46ba4d54d0d51e5d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ae313fc85aadf90e894c4737afa42ead = $(`<div id="html_ae313fc85aadf90e894c4737afa42ead" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Mohammad Aziz Huzaini</b><hr style='margin:4px 0;'><b>Daerah:</b> Tanah Merah, Bangkalan<br><b>Cluster:</b> Cluster 0<br><b>Koordinat:</b> -7.09394, 112.83365</div></div>`)[0];
+                popup_e0e2ca995bfc9aed46ba4d54d0d51e5d.setContent(html_ae313fc85aadf90e894c4737afa42ead);
+            
+        
+
+        marker_190f5c4578fa9207d7d220641dde549f.bindPopup(popup_e0e2ca995bfc9aed46ba4d54d0d51e5d)
+        ;
+
+        
+    
+    
+            marker_190f5c4578fa9207d7d220641dde549f.bindTooltip(
+                `<div>
+                     Mohammad Aziz Huzaini — Cluster 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_190f5c4578fa9207d7d220641dde549f.setIcon(div_icon_947786c9841577b32c4c8d4f5205a82f);
+            
+    
+            feature_group_c706f680316db4f8157d04a95019510e.addTo(map_dc7d4a270c9be26eaa36c07a18a31d80);
+        
+    
+            var feature_group_ce35920b519957da919bedab1ecf81c7 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_9aa026c62ccaa5b612b1f4c0c3067824 = L.marker(
+                [-7.608191337547451, 112.06391579120644],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_2404ca23e5192501d6d0f557d2e525fc = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_b838852ce85c366333650e80767e7e21 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d0c7e8af6e615b8e34f4ebcda9806098 = $(`<div id="html_d0c7e8af6e615b8e34f4ebcda9806098" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Muhammad Ali Murtadho</b><hr style='margin:4px 0;'><b>Daerah:</b> Baron Nganjuk<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.60819, 112.06392</div></div>`)[0];
+                popup_b838852ce85c366333650e80767e7e21.setContent(html_d0c7e8af6e615b8e34f4ebcda9806098);
+            
+        
+
+        marker_9aa026c62ccaa5b612b1f4c0c3067824.bindPopup(popup_b838852ce85c366333650e80767e7e21)
+        ;
+
+        
+    
+    
+            marker_9aa026c62ccaa5b612b1f4c0c3067824.bindTooltip(
+                `<div>
+                     Muhammad Ali Murtadho — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9aa026c62ccaa5b612b1f4c0c3067824.setIcon(div_icon_2404ca23e5192501d6d0f557d2e525fc);
+            
+    
+            var marker_93ce2074f3f99dc92ae2457789c376e4 = L.marker(
+                [-7.202449261994287, 113.07688609290216],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_15846838beb5bbb12fbf5e96ab0d5105 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_6e82858e433534897328e7c1d849ccd8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fc643da15ec44a3aeedc57ddc5f425db = $(`<div id="html_fc643da15ec44a3aeedc57ddc5f425db" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>M. Hendrik Purwanto</b><hr style='margin:4px 0;'><b>Daerah:</b> Sreseh, Sampang<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.20245, 113.07689</div></div>`)[0];
+                popup_6e82858e433534897328e7c1d849ccd8.setContent(html_fc643da15ec44a3aeedc57ddc5f425db);
+            
+        
+
+        marker_93ce2074f3f99dc92ae2457789c376e4.bindPopup(popup_6e82858e433534897328e7c1d849ccd8)
+        ;
+
+        
+    
+    
+            marker_93ce2074f3f99dc92ae2457789c376e4.bindTooltip(
+                `<div>
+                     M. Hendrik Purwanto — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_93ce2074f3f99dc92ae2457789c376e4.setIcon(div_icon_15846838beb5bbb12fbf5e96ab0d5105);
+            
+    
+            var marker_42df4c29dbe4b0d9bf6130f6580112e2 = L.marker(
+                [-7.1220945919768885, 112.59461401217803],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_571a8c0dbdab6d04efac1c066f98d350 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_53d1190453a9b68edb6aa7988444f171 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7c4b56a0a47d6b73fb9e58678e3a3dee = $(`<div id="html_7c4b56a0a47d6b73fb9e58678e3a3dee" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Okan Syailendra wahyudi</b><hr style='margin:4px 0;'><b>Daerah:</b> Manyar, Gresik<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.12209, 112.59461</div></div>`)[0];
+                popup_53d1190453a9b68edb6aa7988444f171.setContent(html_7c4b56a0a47d6b73fb9e58678e3a3dee);
+            
+        
+
+        marker_42df4c29dbe4b0d9bf6130f6580112e2.bindPopup(popup_53d1190453a9b68edb6aa7988444f171)
+        ;
+
+        
+    
+    
+            marker_42df4c29dbe4b0d9bf6130f6580112e2.bindTooltip(
+                `<div>
+                     Okan Syailendra wahyudi — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_42df4c29dbe4b0d9bf6130f6580112e2.setIcon(div_icon_571a8c0dbdab6d04efac1c066f98d350);
+            
+    
+            var marker_49b04d8c345b468aa90c517e2eb155a6 = L.marker(
+                [-7.050872218248434, 112.73582136265784],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_e74ea4549e75dd123f48b7c958a9f902 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_19d0a8ec645a19a4ff31a3dacc297fb4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_00bf205244b57b312de645e624e46deb = $(`<div id="html_00bf205244b57b312de645e624e46deb" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Muhammad Zaidan Nabil Rafi</b><hr style='margin:4px 0;'><b>Daerah:</b> Kamal, Bangkalan<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.05087, 112.73582</div></div>`)[0];
+                popup_19d0a8ec645a19a4ff31a3dacc297fb4.setContent(html_00bf205244b57b312de645e624e46deb);
+            
+        
+
+        marker_49b04d8c345b468aa90c517e2eb155a6.bindPopup(popup_19d0a8ec645a19a4ff31a3dacc297fb4)
+        ;
+
+        
+    
+    
+            marker_49b04d8c345b468aa90c517e2eb155a6.bindTooltip(
+                `<div>
+                     Muhammad Zaidan Nabil Rafi — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_49b04d8c345b468aa90c517e2eb155a6.setIcon(div_icon_e74ea4549e75dd123f48b7c958a9f902);
+            
+    
+            var marker_7996ae3b07b77bc191201df7247769ee = L.marker(
+                [-7.2237865944210435, 112.19394589861426],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_c8d24c21ecb61de1af75be0dfb18cf84 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_8f29403f1354a59c61f1e11d20a287fc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7a66edff304ea5485b3009db34a06b0f = $(`<div id="html_7a66edff304ea5485b3009db34a06b0f" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Triswanti Jannatul Ma'wa</b><hr style='margin:4px 0;'><b>Daerah:</b> Kedungpring Lamongan<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.22379, 112.19395</div></div>`)[0];
+                popup_8f29403f1354a59c61f1e11d20a287fc.setContent(html_7a66edff304ea5485b3009db34a06b0f);
+            
+        
+
+        marker_7996ae3b07b77bc191201df7247769ee.bindPopup(popup_8f29403f1354a59c61f1e11d20a287fc)
+        ;
+
+        
+    
+    
+            marker_7996ae3b07b77bc191201df7247769ee.bindTooltip(
+                `<div>
+                     Triswanti Jannatul Ma'wa — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7996ae3b07b77bc191201df7247769ee.setIcon(div_icon_c8d24c21ecb61de1af75be0dfb18cf84);
+            
+    
+            var marker_a3915260786d1610717d192a899b751b = L.marker(
+                [-7.161887227706052, 112.65339735097159],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_831426cab108bee9616eff998283a0f7 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_c5518992abe9ebbf8416e9b9c18adaaa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4d980ebd97c884d38bd859ab999f008f = $(`<div id="html_4d980ebd97c884d38bd859ab999f008f" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Ahmad Syahrul Farihin</b><hr style='margin:4px 0;'><b>Daerah:</b> Gresik Kota, Gresik<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.16189, 112.65340</div></div>`)[0];
+                popup_c5518992abe9ebbf8416e9b9c18adaaa.setContent(html_4d980ebd97c884d38bd859ab999f008f);
+            
+        
+
+        marker_a3915260786d1610717d192a899b751b.bindPopup(popup_c5518992abe9ebbf8416e9b9c18adaaa)
+        ;
+
+        
+    
+    
+            marker_a3915260786d1610717d192a899b751b.bindTooltip(
+                `<div>
+                     Ahmad Syahrul Farihin — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a3915260786d1610717d192a899b751b.setIcon(div_icon_831426cab108bee9616eff998283a0f7);
+            
+    
+            var marker_cb150d5927fb1b585a0ea16800b5089d = L.marker(
+                [-6.967491143766418, 113.53073101059067],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_ac4744b38de6ece52c94302027f44a92 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_294158c1182a24cfe7ce5dc600359e75 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a1b149c77c23cf096b7f7bc2ad4bb8f0 = $(`<div id="html_a1b149c77c23cf096b7f7bc2ad4bb8f0" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Rian Renaldy</b><hr style='margin:4px 0;'><b>Daerah:</b> Waru, Pamekasan<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -6.96749, 113.53073</div></div>`)[0];
+                popup_294158c1182a24cfe7ce5dc600359e75.setContent(html_a1b149c77c23cf096b7f7bc2ad4bb8f0);
+            
+        
+
+        marker_cb150d5927fb1b585a0ea16800b5089d.bindPopup(popup_294158c1182a24cfe7ce5dc600359e75)
+        ;
+
+        
+    
+    
+            marker_cb150d5927fb1b585a0ea16800b5089d.bindTooltip(
+                `<div>
+                     Rian Renaldy — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cb150d5927fb1b585a0ea16800b5089d.setIcon(div_icon_ac4744b38de6ece52c94302027f44a92);
+            
+    
+            var marker_39e8ef142dc7e261f542a928e8a9842f = L.marker(
+                [-6.877879973385296, 112.34265022942759],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_3cef5b329e907763b66c50609a69d844 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_bf4a30902fefd3567b2bcf0bb05576dc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_450fa150a0d2f31fea4dd453d2481b8c = $(`<div id="html_450fa150a0d2f31fea4dd453d2481b8c" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Ahmad Dafi Zidni Alfarisi</b><hr style='margin:4px 0;'><b>Daerah:</b> Paciran, Lamongan<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -6.87788, 112.34265</div></div>`)[0];
+                popup_bf4a30902fefd3567b2bcf0bb05576dc.setContent(html_450fa150a0d2f31fea4dd453d2481b8c);
+            
+        
+
+        marker_39e8ef142dc7e261f542a928e8a9842f.bindPopup(popup_bf4a30902fefd3567b2bcf0bb05576dc)
+        ;
+
+        
+    
+    
+            marker_39e8ef142dc7e261f542a928e8a9842f.bindTooltip(
+                `<div>
+                     Ahmad Dafi Zidni Alfarisi — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_39e8ef142dc7e261f542a928e8a9842f.setIcon(div_icon_3cef5b329e907763b66c50609a69d844);
+            
+    
+            var marker_5d4ecfed3ada0cdaa6ac52da11a9bc97 = L.marker(
+                [-7.592098814123496, 112.10014491650034],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_7c859e493f572e067de776c477e2a644 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_92cc6aadc604c3ceb89bd7dcd13e3667 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1542a18e9bd36ffa1b45472e2de8a173 = $(`<div id="html_1542a18e9bd36ffa1b45472e2de8a173" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>AHMAD MAULANA ISHAQ</b><hr style='margin:4px 0;'><b>Daerah:</b> Kertosono, Nganjuk<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.59210, 112.10014</div></div>`)[0];
+                popup_92cc6aadc604c3ceb89bd7dcd13e3667.setContent(html_1542a18e9bd36ffa1b45472e2de8a173);
+            
+        
+
+        marker_5d4ecfed3ada0cdaa6ac52da11a9bc97.bindPopup(popup_92cc6aadc604c3ceb89bd7dcd13e3667)
+        ;
+
+        
+    
+    
+            marker_5d4ecfed3ada0cdaa6ac52da11a9bc97.bindTooltip(
+                `<div>
+                     AHMAD MAULANA ISHAQ — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5d4ecfed3ada0cdaa6ac52da11a9bc97.setIcon(div_icon_7c859e493f572e067de776c477e2a644);
+            
+    
+            var marker_2faf3547c65e29e3163d1dee06eb37b4 = L.marker(
+                [-7.258509719452076, 112.59115372950751],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_a962eec30552ca526c219ecab9fb4546 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_c6f8257cedcc6ef43cf5c5bac82313cd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_643e02ae39f396719aaafc8a20471908 = $(`<div id="html_643e02ae39f396719aaafc8a20471908" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Verdi Setyawan Ardiansyah Putra</b><hr style='margin:4px 0;'><b>Daerah:</b> Menganti, Gresik<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.25851, 112.59115</div></div>`)[0];
+                popup_c6f8257cedcc6ef43cf5c5bac82313cd.setContent(html_643e02ae39f396719aaafc8a20471908);
+            
+        
+
+        marker_2faf3547c65e29e3163d1dee06eb37b4.bindPopup(popup_c6f8257cedcc6ef43cf5c5bac82313cd)
+        ;
+
+        
+    
+    
+            marker_2faf3547c65e29e3163d1dee06eb37b4.bindTooltip(
+                `<div>
+                     Verdi Setyawan Ardiansyah Putra — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2faf3547c65e29e3163d1dee06eb37b4.setIcon(div_icon_a962eec30552ca526c219ecab9fb4546);
+            
+    
+            var marker_9e7cd81494d8a89aa9458b21ad95ea16 = L.marker(
+                [-7.156697334583849, 112.73330260220635],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_2e76fd1ba19171ebfb56e1d3b2fb9383 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_ae07ef5dc8ac63f78df9e3ef7dbda455 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f60e693954542f8693621374719d25c6 = $(`<div id="html_f60e693954542f8693621374719d25c6" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>A.Choiril Anwar El-Asfihani Risydan</b><hr style='margin:4px 0;'><b>Daerah:</b> Banyu Ajuh, Perumnas, Kamal<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.15670, 112.73330</div></div>`)[0];
+                popup_ae07ef5dc8ac63f78df9e3ef7dbda455.setContent(html_f60e693954542f8693621374719d25c6);
+            
+        
+
+        marker_9e7cd81494d8a89aa9458b21ad95ea16.bindPopup(popup_ae07ef5dc8ac63f78df9e3ef7dbda455)
+        ;
+
+        
+    
+    
+            marker_9e7cd81494d8a89aa9458b21ad95ea16.bindTooltip(
+                `<div>
+                     A.Choiril Anwar El-Asfihani Risydan — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9e7cd81494d8a89aa9458b21ad95ea16.setIcon(div_icon_2e76fd1ba19171ebfb56e1d3b2fb9383);
+            
+    
+            var marker_ff3f7db0f9005d6b43fe8a81f2cb9e9c = L.marker(
+                [-7.5718153973950075, 112.28310268082973],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_37f0c37b77de71096052d3919cdf1ee6 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_b5524c9169f0f485546bd21bdf5d936b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_503d3d1812e6e83b70366fd6333096eb = $(`<div id="html_503d3d1812e6e83b70366fd6333096eb" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Muhammad Isa</b><hr style='margin:4px 0;'><b>Daerah:</b> Bandung - Jogoroto, Jombang<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.57182, 112.28310</div></div>`)[0];
+                popup_b5524c9169f0f485546bd21bdf5d936b.setContent(html_503d3d1812e6e83b70366fd6333096eb);
+            
+        
+
+        marker_ff3f7db0f9005d6b43fe8a81f2cb9e9c.bindPopup(popup_b5524c9169f0f485546bd21bdf5d936b)
+        ;
+
+        
+    
+    
+            marker_ff3f7db0f9005d6b43fe8a81f2cb9e9c.bindTooltip(
+                `<div>
+                     Muhammad Isa — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ff3f7db0f9005d6b43fe8a81f2cb9e9c.setIcon(div_icon_37f0c37b77de71096052d3919cdf1ee6);
+            
+    
+            var marker_4837ec269c2eb798264dc8aa30bad228 = L.marker(
+                [-6.985641083111055, 112.16392967183124],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_efd105d1f2f9f433973cab69772293de = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_53926c3a0551f8f2bc71551cbb7d1eb4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f0df432c45466658b1f581d681079eab = $(`<div id="html_f0df432c45466658b1f581d681079eab" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Mochammad Zaenal Abidin</b><hr style='margin:4px 0;'><b>Daerah:</b> Widang, Tuban<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -6.98564, 112.16393</div></div>`)[0];
+                popup_53926c3a0551f8f2bc71551cbb7d1eb4.setContent(html_f0df432c45466658b1f581d681079eab);
+            
+        
+
+        marker_4837ec269c2eb798264dc8aa30bad228.bindPopup(popup_53926c3a0551f8f2bc71551cbb7d1eb4)
+        ;
+
+        
+    
+    
+            marker_4837ec269c2eb798264dc8aa30bad228.bindTooltip(
+                `<div>
+                     Mochammad Zaenal Abidin — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4837ec269c2eb798264dc8aa30bad228.setIcon(div_icon_efd105d1f2f9f433973cab69772293de);
+            
+    
+            var marker_840422d1d0a0dca2e28bc24f91e31483 = L.marker(
+                [-7.429584845805727, 112.62117701568063],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_08112c50873838f696db1e0a6abaed6e = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_81efc2409334a54bd13985549e95c259 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8340fc3bca28092c8ee627a5a2fe301e = $(`<div id="html_8340fc3bca28092c8ee627a5a2fe301e" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Alghifari Amar Mukhasyafah</b><hr style='margin:4px 0;'><b>Daerah:</b> Sidoarjo, Wonoayu<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.42958, 112.62118</div></div>`)[0];
+                popup_81efc2409334a54bd13985549e95c259.setContent(html_8340fc3bca28092c8ee627a5a2fe301e);
+            
+        
+
+        marker_840422d1d0a0dca2e28bc24f91e31483.bindPopup(popup_81efc2409334a54bd13985549e95c259)
+        ;
+
+        
+    
+    
+            marker_840422d1d0a0dca2e28bc24f91e31483.bindTooltip(
+                `<div>
+                     Alghifari Amar Mukhasyafah — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_840422d1d0a0dca2e28bc24f91e31483.setIcon(div_icon_08112c50873838f696db1e0a6abaed6e);
+            
+    
+            var marker_87114c50e5dda714d181d4eac3893696 = L.marker(
+                [-7.051216745493002, 112.74047820103578],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_d6aa565b1fe0fd4765fa2cd7c72c86c0 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_2bbc0045112cfc08916d9b89fc367b9e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6e6cac4596e33f2806e038fd0de9cbc6 = $(`<div id="html_6e6cac4596e33f2806e038fd0de9cbc6" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>M. Fatihul Umam</b><hr style='margin:4px 0;'><b>Daerah:</b> Kwanyar, Bangkalan<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.05122, 112.74048</div></div>`)[0];
+                popup_2bbc0045112cfc08916d9b89fc367b9e.setContent(html_6e6cac4596e33f2806e038fd0de9cbc6);
+            
+        
+
+        marker_87114c50e5dda714d181d4eac3893696.bindPopup(popup_2bbc0045112cfc08916d9b89fc367b9e)
+        ;
+
+        
+    
+    
+            marker_87114c50e5dda714d181d4eac3893696.bindTooltip(
+                `<div>
+                     M. Fatihul Umam — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_87114c50e5dda714d181d4eac3893696.setIcon(div_icon_d6aa565b1fe0fd4765fa2cd7c72c86c0);
+            
+    
+            var marker_169169d818bd4f908c62b19bcef6e17d = L.marker(
+                [-7.29077051267568, 112.28340810500477],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_1d196fba8178cce8c079c585a57bdb39 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_c25b88c934f3dcfd7f8df5c93e3f485c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5eff617e31791b889054203a5966f78e = $(`<div id="html_5eff617e31791b889054203a5966f78e" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>dedy Nurohim</b><hr style='margin:4px 0;'><b>Daerah:</b> sambeng, lamongan<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.29077, 112.28341</div></div>`)[0];
+                popup_c25b88c934f3dcfd7f8df5c93e3f485c.setContent(html_5eff617e31791b889054203a5966f78e);
+            
+        
+
+        marker_169169d818bd4f908c62b19bcef6e17d.bindPopup(popup_c25b88c934f3dcfd7f8df5c93e3f485c)
+        ;
+
+        
+    
+    
+            marker_169169d818bd4f908c62b19bcef6e17d.bindTooltip(
+                `<div>
+                     dedy Nurohim — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_169169d818bd4f908c62b19bcef6e17d.setIcon(div_icon_1d196fba8178cce8c079c585a57bdb39);
+            
+    
+            var marker_befe0a460b7e9efa5b4d975566a59155 = L.marker(
+                [-7.047885795385204, 113.94513224752917],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_96c6cc81ebbdd75068ea2cf69a0cd1d4 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_d4be47f79b34c83b1f008a59bf581db0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bd5943214bddaa6ee6d323c34aa28230 = $(`<div id="html_bd5943214bddaa6ee6d323c34aa28230" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Marshella Aulia Putri</b><hr style='margin:4px 0;'><b>Daerah:</b> Kec. Kalianget, Sumenep<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.04789, 113.94513</div></div>`)[0];
+                popup_d4be47f79b34c83b1f008a59bf581db0.setContent(html_bd5943214bddaa6ee6d323c34aa28230);
+            
+        
+
+        marker_befe0a460b7e9efa5b4d975566a59155.bindPopup(popup_d4be47f79b34c83b1f008a59bf581db0)
+        ;
+
+        
+    
+    
+            marker_befe0a460b7e9efa5b4d975566a59155.bindTooltip(
+                `<div>
+                     Marshella Aulia Putri — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_befe0a460b7e9efa5b4d975566a59155.setIcon(div_icon_96c6cc81ebbdd75068ea2cf69a0cd1d4);
+            
+    
+            var marker_4fda5f51ba8f64b827707ff0b4696598 = L.marker(
+                [-6.882035236787237, 111.91912362025082],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_b20be7822f683e663359b5e26abbbd93 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_77d97b8c8ca8d09ea50a3ade7c763b40 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9fda00f835fb8d668595c89689e2028e = $(`<div id="html_9fda00f835fb8d668595c89689e2028e" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Nurhabibatul Umah</b><hr style='margin:4px 0;'><b>Daerah:</b> Kerek, Tuban<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -6.88204, 111.91912</div></div>`)[0];
+                popup_77d97b8c8ca8d09ea50a3ade7c763b40.setContent(html_9fda00f835fb8d668595c89689e2028e);
+            
+        
+
+        marker_4fda5f51ba8f64b827707ff0b4696598.bindPopup(popup_77d97b8c8ca8d09ea50a3ade7c763b40)
+        ;
+
+        
+    
+    
+            marker_4fda5f51ba8f64b827707ff0b4696598.bindTooltip(
+                `<div>
+                     Nurhabibatul Umah — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4fda5f51ba8f64b827707ff0b4696598.setIcon(div_icon_b20be7822f683e663359b5e26abbbd93);
+            
+    
+            var marker_95e4b42a3a067f1504904427326d6c35 = L.marker(
+                [-7.049209956008009, 112.73001597252339],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_650408ef7e26db5cc3532c64e6cd7432 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_faf0a6c940f1a8305443e6ca16ba428a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bf4ebee85ac02cd1332c018e420b49f3 = $(`<div id="html_bf4ebee85ac02cd1332c018e420b49f3" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Fahdimas akmal</b><hr style='margin:4px 0;'><b>Daerah:</b> Kwanyar, Bangkalan<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.04921, 112.73002</div></div>`)[0];
+                popup_faf0a6c940f1a8305443e6ca16ba428a.setContent(html_bf4ebee85ac02cd1332c018e420b49f3);
+            
+        
+
+        marker_95e4b42a3a067f1504904427326d6c35.bindPopup(popup_faf0a6c940f1a8305443e6ca16ba428a)
+        ;
+
+        
+    
+    
+            marker_95e4b42a3a067f1504904427326d6c35.bindTooltip(
+                `<div>
+                     Fahdimas akmal — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_95e4b42a3a067f1504904427326d6c35.setIcon(div_icon_650408ef7e26db5cc3532c64e6cd7432);
+            
+    
+            var marker_eddbaddeb7a19a167782200875c3f423 = L.marker(
+                [-7.3027664014989515, 112.73795694665164],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_4eb2a44f18c0ea4d7f6f81d7625ef232 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_9004b42d826e79af389bdfab2f04507f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_21b9fc29d41d7d5af1756e415febf138 = $(`<div id="html_21b9fc29d41d7d5af1756e415febf138" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Muhammad izzul Millah Aqil</b><hr style='margin:4px 0;'><b>Daerah:</b> Wonokromo, Surabaya<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.30277, 112.73796</div></div>`)[0];
+                popup_9004b42d826e79af389bdfab2f04507f.setContent(html_21b9fc29d41d7d5af1756e415febf138);
+            
+        
+
+        marker_eddbaddeb7a19a167782200875c3f423.bindPopup(popup_9004b42d826e79af389bdfab2f04507f)
+        ;
+
+        
+    
+    
+            marker_eddbaddeb7a19a167782200875c3f423.bindTooltip(
+                `<div>
+                     Muhammad izzul Millah Aqil — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_eddbaddeb7a19a167782200875c3f423.setIcon(div_icon_4eb2a44f18c0ea4d7f6f81d7625ef232);
+            
+    
+            var marker_0de78270a7e01a03a6e44a8068fab66c = L.marker(
+                [-7.253140743784234, 112.71448909397442],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_f82c01d291eabbdf88732cca7c095d85 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_2f02711c6374113cbf71effdaa5b1c29 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ee9e370915b9756afda4623ec58560db = $(`<div id="html_ee9e370915b9756afda4623ec58560db" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Riska Nana Nuril Fadilah</b><hr style='margin:4px 0;'><b>Daerah:</b> Asemrowo, Surabaya<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.25314, 112.71449</div></div>`)[0];
+                popup_2f02711c6374113cbf71effdaa5b1c29.setContent(html_ee9e370915b9756afda4623ec58560db);
+            
+        
+
+        marker_0de78270a7e01a03a6e44a8068fab66c.bindPopup(popup_2f02711c6374113cbf71effdaa5b1c29)
+        ;
+
+        
+    
+    
+            marker_0de78270a7e01a03a6e44a8068fab66c.bindTooltip(
+                `<div>
+                     Riska Nana Nuril Fadilah — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0de78270a7e01a03a6e44a8068fab66c.setIcon(div_icon_f82c01d291eabbdf88732cca7c095d85);
+            
+    
+            var marker_ad80eb76d91b35e34f1b4e8c1cb49c4c = L.marker(
+                [-7.386495262118243, 111.2079357742792],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_3f47c2bf37dd683c781e00f46deb8d4b = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_38742026b5e891f3289e043263ae338b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5a63dfed50aba01f5ed162e286131078 = $(`<div id="html_5a63dfed50aba01f5ed162e286131078" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Deo Candra Saputra</b><hr style='margin:4px 0;'><b>Daerah:</b> Widodaren, Ngawi<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.38650, 111.20794</div></div>`)[0];
+                popup_38742026b5e891f3289e043263ae338b.setContent(html_5a63dfed50aba01f5ed162e286131078);
+            
+        
+
+        marker_ad80eb76d91b35e34f1b4e8c1cb49c4c.bindPopup(popup_38742026b5e891f3289e043263ae338b)
+        ;
+
+        
+    
+    
+            marker_ad80eb76d91b35e34f1b4e8c1cb49c4c.bindTooltip(
+                `<div>
+                     Deo Candra Saputra — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ad80eb76d91b35e34f1b4e8c1cb49c4c.setIcon(div_icon_3f47c2bf37dd683c781e00f46deb8d4b);
+            
+    
+            var marker_7619f02590f504438da251f4db7d3299 = L.marker(
+                [-7.043538887986913, 112.7409535299385],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_81e9e61f5046bc1fe696efa2791760b3 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_e5040917fc049ef6943e244784ed4c2d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_01210031a3af7577be46066d4b5ac2dd = $(`<div id="html_01210031a3af7577be46066d4b5ac2dd" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Rifqi Fairurrafi</b><hr style='margin:4px 0;'><b>Daerah:</b> Bangkalan, Bangkalan<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.04354, 112.74095</div></div>`)[0];
+                popup_e5040917fc049ef6943e244784ed4c2d.setContent(html_01210031a3af7577be46066d4b5ac2dd);
+            
+        
+
+        marker_7619f02590f504438da251f4db7d3299.bindPopup(popup_e5040917fc049ef6943e244784ed4c2d)
+        ;
+
+        
+    
+    
+            marker_7619f02590f504438da251f4db7d3299.bindTooltip(
+                `<div>
+                     Rifqi Fairurrafi — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7619f02590f504438da251f4db7d3299.setIcon(div_icon_81e9e61f5046bc1fe696efa2791760b3);
+            
+    
+            var marker_8aead79c465e5551b0eccb317ab393ec = L.marker(
+                [-6.92940654931888, 106.91740871571321],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_1ad857cfab7af29d732ae0965899b122 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_2a3d56414b242b6ef418daf1613525bd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_523a4d0c16a2629e37ab813d9033a554 = $(`<div id="html_523a4d0c16a2629e37ab813d9033a554" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Fathan Ruhul Alam</b><hr style='margin:4px 0;'><b>Daerah:</b> Warudoyong, Kota Sukabumi<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -6.92941, 106.91741</div></div>`)[0];
+                popup_2a3d56414b242b6ef418daf1613525bd.setContent(html_523a4d0c16a2629e37ab813d9033a554);
+            
+        
+
+        marker_8aead79c465e5551b0eccb317ab393ec.bindPopup(popup_2a3d56414b242b6ef418daf1613525bd)
+        ;
+
+        
+    
+    
+            marker_8aead79c465e5551b0eccb317ab393ec.bindTooltip(
+                `<div>
+                     Fathan Ruhul Alam — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8aead79c465e5551b0eccb317ab393ec.setIcon(div_icon_1ad857cfab7af29d732ae0965899b122);
+            
+    
+            var marker_c53d015609ff20460cea5d055b04493c = L.marker(
+                [-7.0461145502608264, 112.73976002923716],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_84c62bbf160d2b9ec3f85751e8078a55 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_1bd4aa7f028ceb5b628a207cfcf1f5af = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_11713bb119e2bc151a1f364c5996b47a = $(`<div id="html_11713bb119e2bc151a1f364c5996b47a" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Laila Maghfiroh</b><hr style='margin:4px 0;'><b>Daerah:</b> Kamal, Bangkalan<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.04611, 112.73976</div></div>`)[0];
+                popup_1bd4aa7f028ceb5b628a207cfcf1f5af.setContent(html_11713bb119e2bc151a1f364c5996b47a);
+            
+        
+
+        marker_c53d015609ff20460cea5d055b04493c.bindPopup(popup_1bd4aa7f028ceb5b628a207cfcf1f5af)
+        ;
+
+        
+    
+    
+            marker_c53d015609ff20460cea5d055b04493c.bindTooltip(
+                `<div>
+                     Laila Maghfiroh — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c53d015609ff20460cea5d055b04493c.setIcon(div_icon_84c62bbf160d2b9ec3f85751e8078a55);
+            
+    
+            var marker_fd88b40d6c6c3ad495ae3d60315c522e = L.marker(
+                [-7.048412217465229, 112.73265800367892],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_716c35929779cb23a8950dac3eafccbe = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_402f3d4bb85fb2c76fb419fd926e0b92 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_54effba80dc4a20b9b8df52e7aaab4f6 = $(`<div id="html_54effba80dc4a20b9b8df52e7aaab4f6" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Dewi Geizya</b><hr style='margin:4px 0;'><b>Daerah:</b> Banyuajuh kamal, Bangkalan<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.04841, 112.73266</div></div>`)[0];
+                popup_402f3d4bb85fb2c76fb419fd926e0b92.setContent(html_54effba80dc4a20b9b8df52e7aaab4f6);
+            
+        
+
+        marker_fd88b40d6c6c3ad495ae3d60315c522e.bindPopup(popup_402f3d4bb85fb2c76fb419fd926e0b92)
+        ;
+
+        
+    
+    
+            marker_fd88b40d6c6c3ad495ae3d60315c522e.bindTooltip(
+                `<div>
+                     Dewi Geizya — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fd88b40d6c6c3ad495ae3d60315c522e.setIcon(div_icon_716c35929779cb23a8950dac3eafccbe);
+            
+    
+            var marker_93bbe4fde2de1f379efc4e15fd7be3bd = L.marker(
+                [-6.987370594933815, 112.51698695404586],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_d783ea9d34c133eb3db019b4adf7d14b = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_6d511e6b414678a06bb0b90986755664 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cf505452d1da3b21ae720cc2498fed3c = $(`<div id="html_cf505452d1da3b21ae720cc2498fed3c" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Fathul Aziz Saifuddin</b><hr style='margin:4px 0;'><b>Daerah:</b> Dukun, Gresik<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -6.98737, 112.51699</div></div>`)[0];
+                popup_6d511e6b414678a06bb0b90986755664.setContent(html_cf505452d1da3b21ae720cc2498fed3c);
+            
+        
+
+        marker_93bbe4fde2de1f379efc4e15fd7be3bd.bindPopup(popup_6d511e6b414678a06bb0b90986755664)
+        ;
+
+        
+    
+    
+            marker_93bbe4fde2de1f379efc4e15fd7be3bd.bindTooltip(
+                `<div>
+                     Fathul Aziz Saifuddin — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_93bbe4fde2de1f379efc4e15fd7be3bd.setIcon(div_icon_d783ea9d34c133eb3db019b4adf7d14b);
+            
+    
+            var marker_c8bb9b818761a306b110de1d67cf07b5 = L.marker(
+                [-7.0268782987091685, 112.74559165917151],
+                {
+}
+            ).addTo(feature_group_ce35920b519957da919bedab1ecf81c7);
+        
+    
+            var div_icon_f83beb2bd237e7a96c47ed1e24e97af7 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#1e88e5;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_fb7ebf120c27bf89e1c91ed34078c020 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5953fbd5e9a6e35df00721d337aace24 = $(`<div id="html_5953fbd5e9a6e35df00721d337aace24" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Moh Rafie Nazar J</b><hr style='margin:4px 0;'><b>Daerah:</b> Kecamatan Bangkalan,Bangkalan<br><b>Cluster:</b> Cluster 1<br><b>Koordinat:</b> -7.02688, 112.74559</div></div>`)[0];
+                popup_fb7ebf120c27bf89e1c91ed34078c020.setContent(html_5953fbd5e9a6e35df00721d337aace24);
+            
+        
+
+        marker_c8bb9b818761a306b110de1d67cf07b5.bindPopup(popup_fb7ebf120c27bf89e1c91ed34078c020)
+        ;
+
+        
+    
+    
+            marker_c8bb9b818761a306b110de1d67cf07b5.bindTooltip(
+                `<div>
+                     Moh Rafie Nazar J — Cluster 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c8bb9b818761a306b110de1d67cf07b5.setIcon(div_icon_f83beb2bd237e7a96c47ed1e24e97af7);
+            
+    
+            feature_group_ce35920b519957da919bedab1ecf81c7.addTo(map_dc7d4a270c9be26eaa36c07a18a31d80);
+        
+    
+            var feature_group_2efd18b77f63387b1dd13b19608b1ae2 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_04c93a690e80494a2c439a5119e9c40f = L.marker(
+                [-7.5426067953068765, 112.7715580809204],
+                {
+}
+            ).addTo(feature_group_2efd18b77f63387b1dd13b19608b1ae2);
+        
+    
+            var div_icon_2e571469b5abe443a9efc1b547108ee5 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#43a047;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC2\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_6049903f8a68fa3b6233b8ecee693afe = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_748d6f85193aa246e60b8611b0cfa7bc = $(`<div id="html_748d6f85193aa246e60b8611b0cfa7bc" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Rahardian Ananta</b><hr style='margin:4px 0;'><b>Daerah:</b> Jabon , Sidoarjo<br><b>Cluster:</b> Cluster 2<br><b>Koordinat:</b> -7.54261, 112.77156</div></div>`)[0];
+                popup_6049903f8a68fa3b6233b8ecee693afe.setContent(html_748d6f85193aa246e60b8611b0cfa7bc);
+            
+        
+
+        marker_04c93a690e80494a2c439a5119e9c40f.bindPopup(popup_6049903f8a68fa3b6233b8ecee693afe)
+        ;
+
+        
+    
+    
+            marker_04c93a690e80494a2c439a5119e9c40f.bindTooltip(
+                `<div>
+                     Rahardian Ananta — Cluster 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_04c93a690e80494a2c439a5119e9c40f.setIcon(div_icon_2e571469b5abe443a9efc1b547108ee5);
+            
+    
+            var marker_0b36f126d5bdee0d20437aa694059827 = L.marker(
+                [-7.003580195959099, 113.86486222845298],
+                {
+}
+            ).addTo(feature_group_2efd18b77f63387b1dd13b19608b1ae2);
+        
+    
+            var div_icon_940681c12b21c20f00dc3604277413e5 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#43a047;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC2\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_032fd5998630796cbe7c843bcf456816 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4b2f7fc1053582449be4bd391972a972 = $(`<div id="html_4b2f7fc1053582449be4bd391972a972" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Alifah Sayyidaturrhohma</b><hr style='margin:4px 0;'><b>Daerah:</b> Kota Sumenep, Sumenep<br><b>Cluster:</b> Cluster 2<br><b>Koordinat:</b> -7.00358, 113.86486</div></div>`)[0];
+                popup_032fd5998630796cbe7c843bcf456816.setContent(html_4b2f7fc1053582449be4bd391972a972);
+            
+        
+
+        marker_0b36f126d5bdee0d20437aa694059827.bindPopup(popup_032fd5998630796cbe7c843bcf456816)
+        ;
+
+        
+    
+    
+            marker_0b36f126d5bdee0d20437aa694059827.bindTooltip(
+                `<div>
+                     Alifah Sayyidaturrhohma — Cluster 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0b36f126d5bdee0d20437aa694059827.setIcon(div_icon_940681c12b21c20f00dc3604277413e5);
+            
+    
+            var marker_27360c6551b851f83a81fcd323e7aca2 = L.marker(
+                [-7.040397133754566, 112.7389899476612],
+                {
+}
+            ).addTo(feature_group_2efd18b77f63387b1dd13b19608b1ae2);
+        
+    
+            var div_icon_316d6f8e565db93f3954696624f63c0b = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#43a047;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC2\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_66f99d70b84c818c7212d659a4a582c2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aeb57a57cd92d8c8cbc2e2e4ab52243a = $(`<div id="html_aeb57a57cd92d8c8cbc2e2e4ab52243a" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Lailatul Hasanah</b><hr style='margin:4px 0;'><b>Daerah:</b> Socah, Bangkalan<br><b>Cluster:</b> Cluster 2<br><b>Koordinat:</b> -7.04040, 112.73899</div></div>`)[0];
+                popup_66f99d70b84c818c7212d659a4a582c2.setContent(html_aeb57a57cd92d8c8cbc2e2e4ab52243a);
+            
+        
+
+        marker_27360c6551b851f83a81fcd323e7aca2.bindPopup(popup_66f99d70b84c818c7212d659a4a582c2)
+        ;
+
+        
+    
+    
+            marker_27360c6551b851f83a81fcd323e7aca2.bindTooltip(
+                `<div>
+                     Lailatul Hasanah — Cluster 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_27360c6551b851f83a81fcd323e7aca2.setIcon(div_icon_316d6f8e565db93f3954696624f63c0b);
+            
+    
+            var marker_e4ddb874138c8981eabb8f9e24d8035c = L.marker(
+                [-7.044919319738634, 112.73959836633914],
+                {
+}
+            ).addTo(feature_group_2efd18b77f63387b1dd13b19608b1ae2);
+        
+    
+            var div_icon_18c7a1abf78a4d8e3836eb9011aba572 = L.divIcon({
+  "html": "\u003cdiv style=\u0027background:#43a047;color:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 11px Arial;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);\u0027\u003eC2\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+        var popup_cf59fd4d401e4e33fe9f56aa3bd57eae = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_53b005dbbaf9bf1843bcea5e9f96ad1f = $(`<div id="html_53b005dbbaf9bf1843bcea5e9f96ad1f" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial;font-size:12px;min-width:200px;'><b>Kurnia Maulinda Sari</b><hr style='margin:4px 0;'><b>Daerah:</b> Labang, Bangkalan<br><b>Cluster:</b> Cluster 2<br><b>Koordinat:</b> -7.04492, 112.73960</div></div>`)[0];
+                popup_cf59fd4d401e4e33fe9f56aa3bd57eae.setContent(html_53b005dbbaf9bf1843bcea5e9f96ad1f);
+            
+        
+
+        marker_e4ddb874138c8981eabb8f9e24d8035c.bindPopup(popup_cf59fd4d401e4e33fe9f56aa3bd57eae)
+        ;
+
+        
+    
+    
+            marker_e4ddb874138c8981eabb8f9e24d8035c.bindTooltip(
+                `<div>
+                     Kurnia Maulinda Sari — Cluster 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e4ddb874138c8981eabb8f9e24d8035c.setIcon(div_icon_18c7a1abf78a4d8e3836eb9011aba572);
+            
+    
+            feature_group_2efd18b77f63387b1dd13b19608b1ae2.addTo(map_dc7d4a270c9be26eaa36c07a18a31d80);
+        
+    
+            var tile_layer_01717b5aa24849839df2f69afce79af1 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detect_retina": false, "max_native_zoom": 19, "max_zoom": 19, "min_zoom": 0, "no_wrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_aa589ff235ea0502c89c5b9ce8ed4cd8 = new L.Control.MiniMap(
+                tile_layer_01717b5aa24849839df2f69afce79af1,
+                {
+  "position": "bottomright",
+  "width": 150,
+  "height": 150,
+  "collapsedWidth": 25,
+  "collapsedHeight": 25,
+  "zoomLevelOffset": -5,
+  "centerFixed": false,
+  "zoomAnimation": false,
+  "toggleDisplay": true,
+  "autoToggleDisplay": false,
+  "minimized": false,
+}
+            );
+            map_dc7d4a270c9be26eaa36c07a18a31d80.addControl(mini_map_aa589ff235ea0502c89c5b9ce8ed4cd8);
+        
+    
+            var layer_control_9cdc663b9ed3a0b3c7159ab7a310eee7_layers = {
+                base_layers : {
+                    "OpenStreetMap" : tile_layer_114f8570edfbf9432d5bfc53fd7916e6,
+                    "Esri Street Map" : tile_layer_c5bd59f83fd0a764cb8399c7e9f4049e,
+                    "Citra Satelit (Esri)" : tile_layer_4a2657929bc68fda40aae0eb97953931,
+                },
+                overlays :  {
+                    "Cluster 0" : feature_group_c706f680316db4f8157d04a95019510e,
+                    "Cluster 1" : feature_group_ce35920b519957da919bedab1ecf81c7,
+                    "Cluster 2" : feature_group_2efd18b77f63387b1dd13b19608b1ae2,
+                },
+            };
+            let layer_control_9cdc663b9ed3a0b3c7159ab7a310eee7 = L.control.layers(
+                layer_control_9cdc663b9ed3a0b3c7159ab7a310eee7_layers.base_layers,
+                layer_control_9cdc663b9ed3a0b3c7159ab7a310eee7_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_dc7d4a270c9be26eaa36c07a18a31d80);
+
+        
+</script>
+</html>

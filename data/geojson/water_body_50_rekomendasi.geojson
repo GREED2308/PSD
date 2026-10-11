@@ -1,0 +1,2806 @@
+{
+  "type": "FeatureCollection",
+  "name": "Audit 50 water body - rekomendasi kelas berdasarkan skrining spasial",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.225658,
+              -7.108964
+            ],
+            [
+              113.226536,
+              -7.106135
+            ],
+            [
+              113.227449,
+              -7.102617
+            ],
+            [
+              113.220505,
+              -7.107658
+            ],
+            [
+              113.225658,
+              -7.108964
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_001",
+        "source_file": "water body.geojson",
+        "source_feature_index": 0,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 73.17,
+        "area_m2_geodesic": 217162.91,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.2245659,
+        "source_centroid_lat": -7.1064058,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.219845,
+              -7.106858
+            ],
+            [
+              113.222294,
+              -7.105661
+            ],
+            [
+              113.213631,
+              -7.097392
+            ],
+            [
+              113.212059,
+              -7.09993
+            ],
+            [
+              113.219845,
+              -7.106858
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_002",
+        "source_file": "water body.geojson",
+        "source_feature_index": 1,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 73.33,
+        "area_m2_geodesic": 374282.89,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.2168833,
+        "source_centroid_lat": -7.102348,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.218784,
+              -7.099529
+            ],
+            [
+              113.218894,
+              -7.101742
+            ],
+            [
+              113.224193,
+              -7.101307
+            ],
+            [
+              113.222658,
+              -7.098514
+            ],
+            [
+              113.218784,
+              -7.099529
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_003",
+        "source_file": "water body.geojson",
+        "source_feature_index": 2,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 73.69,
+        "area_m2_geodesic": 147538.68,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.2212667,
+        "source_centroid_lat": -7.1003079,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.219807,
+              -7.102177
+            ],
+            [
+              113.222293,
+              -7.105115
+            ],
+            [
+              113.223609,
+              -7.104136
+            ],
+            [
+              113.221891,
+              -7.101996
+            ],
+            [
+              113.219807,
+              -7.102177
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_004",
+        "source_file": "water body.geojson",
+        "source_feature_index": 3,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 73.39,
+        "area_m2_geodesic": 67627.33,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.2218453,
+        "source_centroid_lat": -7.1033613,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.532858,
+              -7.196222
+            ],
+            [
+              113.535566,
+              -7.19706
+            ],
+            [
+              113.537889,
+              -7.195199
+            ],
+            [
+              113.533454,
+              -7.195248
+            ],
+            [
+              113.533479,
+              -7.195791
+            ],
+            [
+              113.532858,
+              -7.196222
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_005",
+        "source_file": "water body.geojson",
+        "source_feature_index": 4,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 82.94,
+        "area_m2_geodesic": 66745.67,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.5352305,
+        "source_centroid_lat": -7.1959362,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.532821,
+              -7.19637
+            ],
+            [
+              113.533603,
+              -7.19902
+            ],
+            [
+              113.534995,
+              -7.197911
+            ],
+            [
+              113.53533,
+              -7.197171
+            ],
+            [
+              113.532821,
+              -7.19637
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_006",
+        "source_file": "water body.geojson",
+        "source_feature_index": 5,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 82.72,
+        "area_m2_geodesic": 40803.22,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.5339894,
+        "source_centroid_lat": -7.197571,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.533616,
+              -7.199044
+            ],
+            [
+              113.535057,
+              -7.199537
+            ],
+            [
+              113.535852,
+              -7.198921
+            ],
+            [
+              113.535106,
+              -7.198058
+            ],
+            [
+              113.533616,
+              -7.199044
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_007",
+        "source_file": "water body.geojson",
+        "source_feature_index": 6,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 82.68,
+        "area_m2_geodesic": 20160.31,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.5348517,
+        "source_centroid_lat": -7.1988654,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.536797,
+              -7.199408
+            ],
+            [
+              113.537239,
+              -7.200645
+            ],
+            [
+              113.539038,
+              -7.200457
+            ],
+            [
+              113.539227,
+              -7.198923
+            ],
+            [
+              113.538975,
+              -7.198594
+            ],
+            [
+              113.536797,
+              -7.199408
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_008",
+        "source_file": "water body.geojson",
+        "source_feature_index": 7,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 82.87,
+        "area_m2_geodesic": 41933.3,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.5381284,
+        "source_centroid_lat": -7.1997056,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.533214,
+              -7.194948
+            ],
+            [
+              113.537482,
+              -7.194886
+            ],
+            [
+              113.537087,
+              -7.192701
+            ],
+            [
+              113.53413,
+              -7.192514
+            ],
+            [
+              113.533214,
+              -7.194948
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_009",
+        "source_file": "water body.geojson",
+        "source_feature_index": 8,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 83.13,
+        "area_m2_geodesic": 102107.38,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.5354352,
+        "source_centroid_lat": -7.1938299,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.534141,
+              -7.192325
+            ],
+            [
+              113.536666,
+              -7.192575
+            ],
+            [
+              113.535633,
+              -7.190872
+            ],
+            [
+              113.534024,
+              -7.190551
+            ],
+            [
+              113.534141,
+              -7.192325
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_010",
+        "source_file": "water body.geojson",
+        "source_feature_index": 9,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 83.28,
+        "area_m2_geodesic": 41888.43,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.5351183,
+        "source_centroid_lat": -7.1916469,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.53247,
+              -7.189178
+            ],
+            [
+              113.535633,
+              -7.190613
+            ],
+            [
+              113.536657,
+              -7.190158
+            ],
+            [
+              113.532326,
+              -7.188402
+            ],
+            [
+              113.53247,
+              -7.189178
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_011",
+        "source_file": "water body.geojson",
+        "source_feature_index": 10,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 83.38,
+        "area_m2_geodesic": 36745.79,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.5343506,
+        "source_centroid_lat": -7.1896023,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.539461,
+              -7.191291
+            ],
+            [
+              113.539892,
+              -7.191496
+            ],
+            [
+              113.54,
+              -7.191184
+            ],
+            [
+              113.539784,
+              -7.190809
+            ],
+            [
+              113.539461,
+              -7.191291
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_012",
+        "source_file": "water body.geojson",
+        "source_feature_index": 11,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 83.67,
+        "area_m2_geodesic": 2332.11,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.5397631,
+        "source_centroid_lat": -7.1911886,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.543409,
+              -7.194574
+            ],
+            [
+              113.544065,
+              -7.194806
+            ],
+            [
+              113.543966,
+              -7.194244
+            ],
+            [
+              113.543409,
+              -7.194574
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_013",
+        "source_file": "water body.geojson",
+        "source_feature_index": 12,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 83.72,
+        "area_m2_geodesic": 2111.34,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.5438133,
+        "source_centroid_lat": -7.1945413,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.548284,
+              -7.194255
+            ],
+            [
+              113.551339,
+              -7.191821
+            ],
+            [
+              113.548904,
+              -7.192561
+            ],
+            [
+              113.548284,
+              -7.194255
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_014",
+        "source_file": "water body.geojson",
+        "source_feature_index": 13,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 84.29,
+        "area_m2_geodesic": 22390.32,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.549509,
+        "source_centroid_lat": -7.192879,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.549415,
+              -7.191149
+            ],
+            [
+              113.549029,
+              -7.192299
+            ],
+            [
+              113.551411,
+              -7.191643
+            ],
+            [
+              113.552804,
+              -7.190288
+            ],
+            [
+              113.549415,
+              -7.191149
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_015",
+        "source_file": "water body.geojson",
+        "source_feature_index": 14,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 84.51,
+        "area_m2_geodesic": 35904.19,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.5506779,
+        "source_centroid_lat": -7.1913101,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.549498,
+              -7.190877
+            ],
+            [
+              113.552966,
+              -7.190154
+            ],
+            [
+              113.553542,
+              -7.18851
+            ],
+            [
+              113.550534,
+              -7.189545
+            ],
+            [
+              113.549498,
+              -7.190877
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_016",
+        "source_file": "water body.geojson",
+        "source_feature_index": 15,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 84.71,
+        "area_m2_geodesic": 50199.02,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.5517126,
+        "source_centroid_lat": -7.1897745,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.196792,
+              -6.944139
+            ],
+            [
+              113.197516,
+              -6.944749
+            ],
+            [
+              113.200062,
+              -6.944597
+            ],
+            [
+              113.198284,
+              -6.943704
+            ],
+            [
+              113.196792,
+              -6.944139
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_017",
+        "source_file": "water body.geojson",
+        "source_feature_index": 16,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 89.68,
+        "area_m2_geodesic": 23030.15,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.1982664,
+        "source_centroid_lat": -6.9443004,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.200084,
+              -6.943856
+            ],
+            [
+              113.200223,
+              -6.944686
+            ],
+            [
+              113.202,
+              -6.944642
+            ],
+            [
+              113.201729,
+              -6.944074
+            ],
+            [
+              113.200084,
+              -6.943856
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_018",
+        "source_file": "water body.geojson",
+        "source_feature_index": 17,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 89.75,
+        "area_m2_geodesic": 14398.42,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.2009555,
+        "source_centroid_lat": -6.9443189,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.19522,
+              -6.944381
+            ],
+            [
+              113.196317,
+              -6.944446
+            ],
+            [
+              113.19669,
+              -6.943139
+            ],
+            [
+              113.19522,
+              -6.944381
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_019",
+        "source_file": "water body.geojson",
+        "source_feature_index": 18,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 89.66,
+        "area_m2_geodesic": 8909.37,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.1960757,
+        "source_centroid_lat": -6.9439887,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.195439,
+              -6.94645
+            ],
+            [
+              113.193881,
+              -6.946406
+            ],
+            [
+              113.193728,
+              -6.946973
+            ],
+            [
+              113.195439,
+              -6.94645
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_020",
+        "source_file": "water body.geojson",
+        "source_feature_index": 19,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 89.33,
+        "area_m2_geodesic": 5439.12,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.1943493,
+        "source_centroid_lat": -6.9466097,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.194145,
+              -6.942878
+            ],
+            [
+              113.194913,
+              -6.943793
+            ],
+            [
+              113.195571,
+              -6.942791
+            ],
+            [
+              113.19533,
+              -6.94229
+            ],
+            [
+              113.194145,
+              -6.942878
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_021",
+        "source_file": "water body.geojson",
+        "source_feature_index": 20,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 89.74,
+        "area_m2_geodesic": 12875.03,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.1949248,
+        "source_centroid_lat": -6.9429791,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.190678,
+              -6.943315
+            ],
+            [
+              113.192543,
+              -6.943097
+            ],
+            [
+              113.191819,
+              -6.942313
+            ],
+            [
+              113.191007,
+              -6.94216
+            ],
+            [
+              113.190678,
+              -6.943315
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_022",
+        "source_file": "water body.geojson",
+        "source_feature_index": 21,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 89.68,
+        "area_m2_geodesic": 15937.61,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.191486,
+        "source_centroid_lat": -6.94279,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.187935,
+              -6.944077
+            ],
+            [
+              113.188242,
+              -6.943467
+            ],
+            [
+              113.188045,
+              -6.942509
+            ],
+            [
+              113.187387,
+              -6.942422
+            ],
+            [
+              113.187628,
+              -6.943358
+            ],
+            [
+              113.187935,
+              -6.944077
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_023",
+        "source_file": "water body.geojson",
+        "source_feature_index": 22,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 89.55,
+        "area_m2_geodesic": 9591.58,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.1878541,
+        "source_centroid_lat": -6.9431152,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.18912,
+              -6.94216
+            ],
+            [
+              113.18901,
+              -6.940919
+            ],
+            [
+              113.187935,
+              -6.941245
+            ],
+            [
+              113.188264,
+              -6.942313
+            ],
+            [
+              113.18912,
+              -6.94216
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_024",
+        "source_file": "water body.geojson",
+        "source_feature_index": 23,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 89.73,
+        "area_m2_geodesic": 14265.11,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.1885856,
+        "source_centroid_lat": -6.9416333,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.186575,
+              -6.942356
+            ],
+            [
+              113.187869,
+              -6.942204
+            ],
+            [
+              113.18776,
+              -6.941746
+            ],
+            [
+              113.186684,
+              -6.941485
+            ],
+            [
+              113.186575,
+              -6.942356
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_025",
+        "source_file": "water body.geojson",
+        "source_feature_index": 24,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 89.66,
+        "area_m2_geodesic": 9623.39,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.1871591,
+        "source_centroid_lat": -6.941955,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.184249,
+              -6.942552
+            ],
+            [
+              113.184666,
+              -6.942748
+            ],
+            [
+              113.186289,
+              -6.942574
+            ],
+            [
+              113.186311,
+              -6.941964
+            ],
+            [
+              113.184402,
+              -6.941986
+            ],
+            [
+              113.184249,
+              -6.942552
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_026",
+        "source_file": "water body.geojson",
+        "source_feature_index": 25,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 89.58,
+        "area_m2_geodesic": 16576.11,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.1852876,
+        "source_centroid_lat": -6.9423231,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.191402,
+              -6.938265
+            ],
+            [
+              113.193026,
+              -6.938483
+            ],
+            [
+              113.193947,
+              -6.935717
+            ],
+            [
+              113.193443,
+              -6.935325
+            ],
+            [
+              113.191402,
+              -6.938265
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_027",
+        "source_file": "water body.geojson",
+        "source_feature_index": 26,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 90.32,
+        "area_m2_geodesic": 42619.41,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.1928371,
+        "source_centroid_lat": -6.9371439,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.190985,
+              -6.940291
+            ],
+            [
+              113.193245,
+              -6.938505
+            ],
+            [
+              113.191556,
+              -6.938766
+            ],
+            [
+              113.190985,
+              -6.940291
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_028",
+        "source_file": "water body.geojson",
+        "source_feature_index": 27,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 90.08,
+        "area_m2_geodesic": 14828.71,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.1919287,
+        "source_centroid_lat": -6.9391873,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.195505,
+              -6.941946
+            ],
+            [
+              113.191885,
+              -6.940748
+            ],
+            [
+              113.189734,
+              -6.942099
+            ],
+            [
+              113.195505,
+              -6.941946
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_029",
+        "source_file": "water body.geojson",
+        "source_feature_index": 28,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 89.83,
+        "area_m2_geodesic": 45631.4,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.1923747,
+        "source_centroid_lat": -6.9415977,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.182066,
+              -6.942828
+            ],
+            [
+              113.184019,
+              -6.94261
+            ],
+            [
+              113.184195,
+              -6.941564
+            ],
+            [
+              113.181869,
+              -6.942457
+            ],
+            [
+              113.182066,
+              -6.942828
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_030",
+        "source_file": "water body.geojson",
+        "source_feature_index": 29,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 89.53,
+        "area_m2_geodesic": 18596.62,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.183182,
+        "source_centroid_lat": -6.9423166,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.178512,
+              -6.941063
+            ],
+            [
+              113.177195,
+              -6.941651
+            ],
+            [
+              113.181496,
+              -6.942109
+            ],
+            [
+              113.181957,
+              -6.941455
+            ],
+            [
+              113.178512,
+              -6.941063
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_031",
+        "source_file": "water body.geojson",
+        "source_feature_index": 30,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 89.53,
+        "area_m2_geodesic": 34011.26,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.1797617,
+        "source_centroid_lat": -6.9415791,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.913486,
+              -7.022672
+            ],
+            [
+              113.918069,
+              -7.025342
+            ],
+            [
+              113.921257,
+              -7.023266
+            ],
+            [
+              113.918019,
+              -7.018519
+            ],
+            [
+              113.913835,
+              -7.020596
+            ],
+            [
+              113.913486,
+              -7.022672
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_032",
+        "source_file": "water body.geojson",
+        "source_feature_index": 31,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Segaran",
+        "distance_to_nearest_reference_lake_km": 118.21,
+        "area_m2_geodesic": 372397.62,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.9172691,
+        "source_centroid_lat": -7.022042,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.914931,
+              -7.015009
+            ],
+            [
+              113.919165,
+              -7.018668
+            ],
+            [
+              113.92041,
+              -7.013872
+            ],
+            [
+              113.916724,
+              -7.012933
+            ],
+            [
+              113.914931,
+              -7.015009
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_033",
+        "source_file": "water body.geojson",
+        "source_feature_index": 32,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Segaran",
+        "distance_to_nearest_reference_lake_km": 118.9,
+        "area_m2_geodesic": 208936.06,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 113.9179465,
+        "source_centroid_lat": -7.0153278,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.921655,
+              -7.013081
+            ],
+            [
+              113.921157,
+              -7.018816
+            ],
+            [
+              113.926736,
+              -7.019755
+            ],
+            [
+              113.927982,
+              -7.014564
+            ],
+            [
+              113.921655,
+              -7.013081
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_034",
+        "source_file": "water body.geojson",
+        "source_feature_index": 33,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Segaran",
+        "distance_to_nearest_reference_lake_km": 119.13,
+        "area_m2_geodesic": 410291.17,
+        "usable_for_training": false,
+        "review_reason": "Geometri berada pada zona pantai atau menyentuh/melintasi garis pantai pada pemeriksaan skala menengah. Dapat berupa perairan pesisir, laguna, atau badan air lokal; terlalu berisiko untuk label laut murni sebelum inspeksi satelit.",
+        "review_action": "Periksa dengan citra satelit. Jangan masukkan sebagai sampel laut murni selama poligon mencakup garis pantai.",
+        "source_centroid_lon": 113.9243579,
+        "source_centroid_lat": -7.0164852,
+        "recommended_class_id": 5,
+        "recommended_class_name": "kemungkinan laut/perairan pesisir",
+        "recommendation_confidence": "rendah (poligon menyentuh/melintasi garis pantai kasar)",
+        "water_audit_status": "PESISIR_CAMPURAN_TIDAK_DIPAKAI_TRAINING",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#fdae61"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.921307,
+              -7.02989
+            ],
+            [
+              113.937994,
+              -7.032708
+            ],
+            [
+              113.938392,
+              -7.0246
+            ],
+            [
+              113.925441,
+              -7.020497
+            ],
+            [
+              113.921307,
+              -7.02989
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_035",
+        "source_file": "water body.geojson",
+        "source_feature_index": 34,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Segaran",
+        "distance_to_nearest_reference_lake_km": 118.45,
+        "area_m2_geodesic": 1680309.52,
+        "usable_for_training": false,
+        "review_reason": "Geometri berada pada zona pantai atau menyentuh/melintasi garis pantai pada pemeriksaan skala menengah. Dapat berupa perairan pesisir, laguna, atau badan air lokal; terlalu berisiko untuk label laut murni sebelum inspeksi satelit.",
+        "review_action": "Periksa dengan citra satelit. Jangan masukkan sebagai sampel laut murni selama poligon mencakup garis pantai.",
+        "source_centroid_lon": 113.9304555,
+        "source_centroid_lat": -7.0270146,
+        "recommended_class_id": 5,
+        "recommended_class_name": "kemungkinan laut/perairan pesisir",
+        "recommendation_confidence": "rendah (poligon menyentuh/melintasi garis pantai kasar)",
+        "water_audit_status": "PESISIR_CAMPURAN_TIDAK_DIPAKAI_TRAINING",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#fdae61"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.94593,
+              -7.043111
+            ],
+            [
+              113.947972,
+              -7.039749
+            ],
+            [
+              113.949516,
+              -7.034261
+            ],
+            [
+              113.942642,
+              -7.041281
+            ],
+            [
+              113.94593,
+              -7.043111
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_036",
+        "source_file": "water body.geojson",
+        "source_feature_index": 35,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Segaran",
+        "distance_to_nearest_reference_lake_km": 118.13,
+        "area_m2_geodesic": 254616.99,
+        "usable_for_training": false,
+        "review_reason": "Centroid dan seluruh verteks berada di sisi laut pada pemeriksaan garis pantai skala menengah. Ini kandidat laut paling kuat dari 50 fitur, tetapi harus dicek pada citra satelit resolusi tinggi karena garis pantai kasar tidak cukup untuk label final.",
+        "review_action": "Periksa di basemap satelit. Jika benar seluruh poligon air laut terbuka, pertahankan class_id=5.",
+        "source_centroid_lon": 113.9462858,
+        "source_centroid_lat": -7.0394773,
+        "recommended_class_id": 5,
+        "recommended_class_name": "laut",
+        "recommendation_confidence": "sedang (skrining garis pantai kasar)",
+        "water_audit_status": "KANDIDAT_LAUT_TERBAIK_DARI_50",
+        "included_in_six_class_candidate_dataset": true,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#0571b0"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              113.927051,
+              -7.034261
+            ],
+            [
+              113.941945,
+              -7.04138
+            ],
+            [
+              113.944336,
+              -7.038612
+            ],
+            [
+              113.929243,
+              -7.031592
+            ],
+            [
+              113.927051,
+              -7.034261
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_037",
+        "source_file": "water body.geojson",
+        "source_feature_index": 36,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Segaran",
+        "distance_to_nearest_reference_lake_km": 117.83,
+        "area_m2_geodesic": 695978.7,
+        "usable_for_training": false,
+        "review_reason": "Geometri berada pada zona pantai atau menyentuh/melintasi garis pantai pada pemeriksaan skala menengah. Dapat berupa perairan pesisir, laguna, atau badan air lokal; terlalu berisiko untuk label laut murni sebelum inspeksi satelit.",
+        "review_action": "Periksa dengan citra satelit. Jangan masukkan sebagai sampel laut murni selama poligon mencakup garis pantai.",
+        "source_centroid_lon": 113.9357082,
+        "source_centroid_lat": -7.0364899,
+        "recommended_class_id": 5,
+        "recommended_class_name": "kemungkinan laut/perairan pesisir",
+        "recommendation_confidence": "rendah (poligon menyentuh/melintasi garis pantai kasar)",
+        "water_audit_status": "PESISIR_CAMPURAN_TIDAK_DIPAKAI_TRAINING",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#fdae61"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              112.48667,
+              -7.177988
+            ],
+            [
+              112.487896,
+              -7.18026
+            ],
+            [
+              112.501795,
+              -7.184478
+            ],
+            [
+              112.511279,
+              -7.179935
+            ],
+            [
+              112.508826,
+              -7.170201
+            ],
+            [
+              112.500732,
+              -7.169471
+            ],
+            [
+              112.500323,
+              -7.175231
+            ],
+            [
+              112.48667,
+              -7.177988
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_038",
+        "source_file": "water body.geojson",
+        "source_feature_index": 37,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 82.96,
+        "area_m2_geodesic": 2401060.39,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 112.5013445,
+        "source_centroid_lat": -7.1775996,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              112.521583,
+              -7.202317
+            ],
+            [
+              112.528941,
+              -7.198505
+            ],
+            [
+              112.529105,
+              -7.195585
+            ],
+            [
+              112.526244,
+              -7.194692
+            ],
+            [
+              112.519785,
+              -7.194611
+            ],
+            [
+              112.521338,
+              -7.197369
+            ],
+            [
+              112.521583,
+              -7.202317
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_039",
+        "source_file": "water body.geojson",
+        "source_feature_index": 38,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 79.59,
+        "area_m2_geodesic": 546340.24,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 112.5245017,
+        "source_centroid_lat": -7.1976031,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              112.622536,
+              -7.152425
+            ],
+            [
+              112.623967,
+              -7.15366
+            ],
+            [
+              112.62886,
+              -7.155329
+            ],
+            [
+              112.629789,
+              -7.154505
+            ],
+            [
+              112.62957,
+              -7.153086
+            ],
+            [
+              112.628686,
+              -7.152468
+            ],
+            [
+              112.627976,
+              -7.153053
+            ],
+            [
+              112.623279,
+              -7.151157
+            ],
+            [
+              112.622536,
+              -7.152425
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_040",
+        "source_file": "water body.geojson",
+        "source_feature_index": 39,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 76.61,
+        "area_m2_geodesic": 176510.56,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 112.6263348,
+        "source_centroid_lat": -7.1533132,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              112.630713,
+              -7.156651
+            ],
+            [
+              112.633563,
+              -7.15798
+            ],
+            [
+              112.636987,
+              -7.158339
+            ],
+            [
+              112.637838,
+              -7.157495
+            ],
+            [
+              112.63167,
+              -7.154772
+            ],
+            [
+              112.630713,
+              -7.156651
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_041",
+        "source_file": "water body.geojson",
+        "source_feature_index": 40,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 75.82,
+        "area_m2_geodesic": 149365.01,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 112.633945,
+        "source_centroid_lat": -7.1568281,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              112.712118,
+              -7.234404
+            ],
+            [
+              112.716141,
+              -7.235557
+            ],
+            [
+              112.718599,
+              -7.232409
+            ],
+            [
+              112.713012,
+              -7.231743
+            ],
+            [
+              112.712118,
+              -7.234404
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_042",
+        "source_file": "water body.geojson",
+        "source_feature_index": 41,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 63.86,
+        "area_m2_geodesic": 189073.39,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 112.7150984,
+        "source_centroid_lat": -7.2334884,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              112.711156,
+              -7.228794
+            ],
+            [
+              112.719916,
+              -7.230912
+            ],
+            [
+              112.720903,
+              -7.228706
+            ],
+            [
+              112.71279,
+              -7.226953
+            ],
+            [
+              112.711156,
+              -7.228794
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_043",
+        "source_file": "water body.geojson",
+        "source_feature_index": 42,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 64.24,
+        "area_m2_geodesic": 239485.69,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 112.7162468,
+        "source_centroid_lat": -7.2288717,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              112.711286,
+              -7.226931
+            ],
+            [
+              112.712244,
+              -7.226161
+            ],
+            [
+              112.711286,
+              -7.222855
+            ],
+            [
+              112.709825,
+              -7.222901
+            ],
+            [
+              112.711286,
+              -7.226931
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_044",
+        "source_file": "water body.geojson",
+        "source_feature_index": 43,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 64.93,
+        "area_m2_geodesic": 60213.8,
+        "usable_for_training": false,
+        "review_reason": "Geometri berada pada zona pantai atau menyentuh/melintasi garis pantai pada pemeriksaan skala menengah. Dapat berupa perairan pesisir, laguna, atau badan air lokal; terlalu berisiko untuk label laut murni sebelum inspeksi satelit.",
+        "review_action": "Periksa dengan citra satelit. Jangan masukkan sebagai sampel laut murni selama poligon mencakup garis pantai.",
+        "source_centroid_lon": 112.7111183,
+        "source_centroid_lat": -7.2246594,
+        "recommended_class_id": 5,
+        "recommended_class_name": "kemungkinan laut/perairan pesisir",
+        "recommendation_confidence": "rendah (poligon menyentuh/melintasi garis pantai kasar)",
+        "water_audit_status": "PESISIR_CAMPURAN_TIDAK_DIPAKAI_TRAINING",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#fdae61"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              112.801101,
+              -7.274241
+            ],
+            [
+              112.803782,
+              -7.274583
+            ],
+            [
+              112.804001,
+              -7.274019
+            ],
+            [
+              112.801079,
+              -7.273943
+            ],
+            [
+              112.801101,
+              -7.274241
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_045",
+        "source_file": "water body.geojson",
+        "source_feature_index": 44,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 55.39,
+        "area_m2_geodesic": 14997.49,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 112.8026425,
+        "source_centroid_lat": -7.2742055,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              112.42775,
+              -7.256807
+            ],
+            [
+              112.428155,
+              -7.257017
+            ],
+            [
+              112.429878,
+              -7.25667
+            ],
+            [
+              112.43044,
+              -7.254084
+            ],
+            [
+              112.428754,
+              -7.254093
+            ],
+            [
+              112.428063,
+              -7.255335
+            ],
+            [
+              112.42775,
+              -7.256807
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_046",
+        "source_file": "water body.geojson",
+        "source_feature_index": 45,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 82.76,
+        "area_m2_geodesic": 67926.65,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 112.4291019,
+        "source_centroid_lat": -7.2555202,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              112.419163,
+              -7.254358
+            ],
+            [
+              112.419656,
+              -7.255608
+            ],
+            [
+              112.420331,
+              -7.256014
+            ],
+            [
+              112.420673,
+              -7.254644
+            ],
+            [
+              112.419163,
+              -7.254358
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_047",
+        "source_file": "water body.geojson",
+        "source_feature_index": 46,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 83.57,
+        "area_m2_geodesic": 17160.08,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 112.419978,
+        "source_centroid_lat": -7.2550789,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              112.412704,
+              -7.25383
+            ],
+            [
+              112.413426,
+              -7.254467
+            ],
+            [
+              112.413961,
+              -7.25399
+            ],
+            [
+              112.41241,
+              -7.253406
+            ],
+            [
+              112.412704,
+              -7.25383
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_048",
+        "source_file": "water body.geojson",
+        "source_feature_index": 47,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 84.23,
+        "area_m2_geodesic": 7151.51,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 112.4132231,
+        "source_centroid_lat": -7.2539489,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              112.419447,
+              -7.265867
+            ],
+            [
+              112.421704,
+              -7.26701
+            ],
+            [
+              112.422088,
+              -7.265962
+            ],
+            [
+              112.419735,
+              -7.265104
+            ],
+            [
+              112.419447,
+              -7.265867
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_049",
+        "source_file": "water body.geojson",
+        "source_feature_index": 48,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 82.73,
+        "area_m2_geodesic": 29595.94,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 112.4208031,
+        "source_centroid_lat": -7.2660119,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              112.436407,
+              -7.258229
+            ],
+            [
+              112.437992,
+              -7.258563
+            ],
+            [
+              112.438801,
+              -7.255385
+            ],
+            [
+              112.436609,
+              -7.255084
+            ],
+            [
+              112.436407,
+              -7.258229
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "class": "water body",
+        "sample_id": "WATER_REVIEW_050",
+        "source_file": "water body.geojson",
+        "source_feature_index": 49,
+        "original_label": "water body",
+        "class_id": null,
+        "class_name": "belum_terklasifikasi",
+        "preliminary_review": "TIDAK_CUKUP_BUKTI_UNTUK_LABEL_LAUT_ATAU_DANAU",
+        "nearest_reference_lake": "Ranu Grati",
+        "distance_to_nearest_reference_lake_km": 81.96,
+        "area_m2_geodesic": 74878.31,
+        "usable_for_training": false,
+        "review_reason": "Fitur terletak di sisi daratan pada pemeriksaan garis pantai kasar, tetapi atribut sumber hanya menyebut water body. Koordinat/luas saja tidak dapat membedakan danau alami dari tambak, kolam, waduk kecil, atau saluran. Tidak boleh dipaksa menjadi kelas danau.",
+        "review_action": "Jangan ubah menjadi danau tanpa memeriksa citra dan/atau referensi badan air bernama. Jika tambak/kolam/kanal, keluarkan dari dataset enam kelas.",
+        "source_centroid_lon": 112.4374719,
+        "source_centroid_lat": -7.2567346,
+        "recommended_class_id": null,
+        "recommended_class_name": "belum dapat ditetapkan sebagai laut/danau",
+        "recommendation_confidence": "tidak cukup bukti",
+        "water_audit_status": "BADAN_AIR_DARATAN_JENIS_BELUM_DIKETAHUI",
+        "included_in_six_class_candidate_dataset": false,
+        "coastline_screen_note": "Skrining posisi berdasarkan garis pantai resolusi menengah; bukan validasi citra satelit.",
+        "review_color": "#8c8c8c"
+      }
+    }
+  ]
+}

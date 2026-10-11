@@ -1,0 +1,7 @@
+﻿class_id,class_name,jumlah_sampel,cakupan_penuh_min_satu_produk,hanya_cakupan_parsial,tanpa_irisan,min_cakupan_persen,median_cakupan_persen
+1,sawah,50,50,0,0,100.0,100.0
+2,bangunan,100,100,0,0,100.0,100.0
+3,mangrove,49,49,0,0,100.0,100.0
+4,lahan_hijau,48,48,0,0,100.0,100.0
+5,laut,40,40,0,0,100.0,100.0
+6,danau,66,66,0,0,100.0,100.0

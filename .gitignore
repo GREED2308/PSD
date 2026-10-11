@@ -17,3 +17,6 @@ data/raw/
 
 # OS
 .DS_Store
+
+# Arsip ZIP tidak perlu di-upload
+*.zip

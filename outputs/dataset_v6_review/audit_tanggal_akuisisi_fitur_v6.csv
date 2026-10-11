@@ -1,0 +1,6 @@
+﻿date_column,date_value,sample_count
+acquisition_date_requested,2026-09-18,223
+acquisition_date_requested,2026-10-01,58
+acquisition_date_requested,2026-10-08,22
+retry_used_alternative_date,2026-10-01,49
+retry_used_alternative_date,2026-10-08,22

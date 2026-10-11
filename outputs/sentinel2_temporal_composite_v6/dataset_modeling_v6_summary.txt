@@ -1,0 +1,26 @@
+=== Persiapan dataset modeling v6 ===
+Input: D:\Projects\Kuliah\PSD\outputs\sentinel2_temporal_composite_v6\fitur_sentinel2a_l2a_v6_temporal_2026-09-01_2026-10-10.csv
+Rows input: 303
+Unique sample_id: 303
+User declaration: labels and polygon boundaries visually checked
+Successful extraction + complete features: 303
+Quality-screened subset: 255
+Flagged out of quality-screened subset: 48
+Filter: status=OK, all features finite, clear_pixel_count >= 10, valid_pixel_fraction_of_polygon >= 0.5, mean_clear_observations_per_valid_pixel >= 2.0
+Note: thresholds are operational review criteria, not universal scientific standards.
+Note: the all-reviewed variant retains low-support samples to enable a baseline/sensitivity comparison.
+
+Counts by class:
+ class_name  all_reviewed_complete_features  quality_screened_count  excluded_from_quality_screen
+      sawah                              50                      22                            28
+   bangunan                              51                      51                             0
+   mangrove                              49                      49                             0
+lahan_hijau                              48                      48                             0
+       laut                              40                      40                             0
+      danau                              65                      45                            20
+
+Files:
+D:\Projects\Kuliah\PSD\outputs\sentinel2_temporal_composite_v6\dataset_modeling_v6_all_reviewed.csv
+D:\Projects\Kuliah\PSD\outputs\sentinel2_temporal_composite_v6\dataset_modeling_v6_quality_screened.csv
+D:\Projects\Kuliah\PSD\outputs\sentinel2_temporal_composite_v6\dataset_modeling_v6_quality_review_excluded.csv
+D:\Projects\Kuliah\PSD\outputs\sentinel2_temporal_composite_v6\dataset_modeling_v6_summary_by_class.csv

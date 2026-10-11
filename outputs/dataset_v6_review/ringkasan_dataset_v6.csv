@@ -1,0 +1,13 @@
+﻿dataset,class_id,class_name,feature_count,latest_OK,latest_NO_CLEAR_PIXELS,labels_verified_count
+master_v6_review,1,sawah,50,50,0,0
+master_v6_review,2,bangunan,100,12,88,0
+master_v6_review,3,mangrove,49,49,0,0
+master_v6_review,4,lahan_hijau,48,40,8,0
+master_v6_review,5,laut,40,40,0,0
+master_v6_review,6,danau,66,45,21,0
+representative_review_subset,1,sawah,50,50,0,0
+representative_review_subset,2,bangunan,51,11,40,0
+representative_review_subset,3,mangrove,49,49,0,0
+representative_review_subset,4,lahan_hijau,48,40,8,0
+representative_review_subset,5,laut,40,40,0,0
+representative_review_subset,6,danau,65,44,21,0

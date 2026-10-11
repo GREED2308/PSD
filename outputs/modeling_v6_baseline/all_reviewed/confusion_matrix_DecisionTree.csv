@@ -1,0 +1,7 @@
+﻿,sawah,bangunan,mangrove,lahan_hijau,laut,danau
+sawah,9,1,0,0,0,0
+bangunan,0,10,0,0,0,0
+mangrove,0,0,10,0,0,0
+lahan_hijau,0,0,0,10,0,0
+laut,0,0,0,0,8,0
+danau,0,1,0,3,0,9

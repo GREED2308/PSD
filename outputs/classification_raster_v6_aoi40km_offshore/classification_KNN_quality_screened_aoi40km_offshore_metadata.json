@@ -1,0 +1,97 @@
+{
+  "project": "SIG Klasifikasi Tutupan Lahan Jawa Timur v6",
+  "scope": "AOI persegi panjang pesisir 40 x 40 km termasuk perairan sekitar; BUKAN klasifikasi raster seluruh provinsi",
+  "model": "KNN",
+  "training_variant": "quality_screened",
+  "model_path": "D:\\Projects\\Kuliah\\PSD\\outputs\\modeling_v6_baseline\\quality_screened\\model_KNN.joblib",
+  "feature_names": [
+    "B01_mean",
+    "B02_mean",
+    "B03_mean",
+    "B04_mean",
+    "B05_mean",
+    "B06_mean",
+    "B07_mean",
+    "B08_mean",
+    "B8A_mean",
+    "B09_mean",
+    "B11_mean",
+    "B12_mean",
+    "NDVI_mean",
+    "NDWI_mean",
+    "MNDWI_mean",
+    "NDBI_mean"
+  ],
+  "class_codes": {
+    "1": "sawah",
+    "2": "bangunan",
+    "3": "mangrove",
+    "4": "lahan_hijau",
+    "5": "laut",
+    "6": "danau"
+  },
+  "class_labels": {
+    "0": "Tidak ada data / tidak lolos mask",
+    "1": "Sawah",
+    "2": "Bangunan",
+    "3": "Mangrove",
+    "4": "Lahan hijau",
+    "5": "Perairan terbuka / laut",
+    "6": "Danau / ranu"
+  },
+  "crs": "EPSG:32749",
+  "resolution_m": 10.0,
+  "aoi_bounds_utm": [
+    680000.0,
+    9200000.0,
+    720000.0,
+    9240000.0
+  ],
+  "composite_start_date": "2026-09-01",
+  "composite_end_date_inclusive": "2026-10-10",
+  "temporal_method": "Per-pixel median of Sentinel-2 L2A observations passing dataMask and SCL classes 4/5/6",
+  "spatial_method": "Prediction by 10 m pixel; output mask clipped to full rectangular AOI including offshore water, not clipped to provincial land boundary",
+  "processed_tiles": 4,
+  "total_intersecting_tiles": 4,
+  "complete_aoi": true,
+  "valid_predicted_pixels": 15999508,
+  "valid_predicted_area_ha": 159995.08,
+  "area_summary_csv": "D:\\Projects\\Kuliah\\PSD\\outputs\\classification_raster_v6_aoi40km_offshore\\summary_area_prediksi_KNN_quality_screened_aoi40km.csv",
+  "boundary_source": "D:\\Projects\\Kuliah\\PSD\\data\\geojson\\jawa_timur_2D.geojson",
+  "aoi_geojson": "D:\\Projects\\Kuliah\\PSD\\outputs\\classification_raster_v6_aoi40km_offshore\\aoi_klasifikasi_percontohan_40x40km_offshore.geojson",
+  "raster_path": "D:\\Projects\\Kuliah\\PSD\\outputs\\classification_raster_v6_aoi40km_offshore\\classification_KNN_quality_screened_10m_aoi40km_offshore.tif",
+  "warning": "Training features are polygon-level means; output is pixel-level. Entire rectangle includes nearby sea and any land inside the rectangle regardless of boundary polygon. Treat as exploratory pilot, not validated province-wide land-cover inventory.",
+  "preview_png": "D:\\Projects\\Kuliah\\PSD\\outputs\\classification_raster_v6_aoi40km_offshore\\classification_KNN_quality_screened_aoi40km_offshore_preview.png",
+  "bounds_wgs84": {
+    "west": 112.62902986786247,
+    "south": -7.234547794594033,
+    "east": 112.99244675636827,
+    "north": -6.87148987520792
+  },
+  "classes": {
+    "1": {
+      "label": "Sawah",
+      "color": "#D6A23A"
+    },
+    "2": {
+      "label": "Bangunan",
+      "color": "#E76F51"
+    },
+    "3": {
+      "label": "Mangrove",
+      "color": "#287271"
+    },
+    "4": {
+      "label": "Lahan hijau",
+      "color": "#6A994E"
+    },
+    "5": {
+      "label": "Perairan terbuka / laut",
+      "color": "#277DA1"
+    },
+    "6": {
+      "label": "Danau / ranu",
+      "color": "#7B61A8"
+    }
+  }
+}

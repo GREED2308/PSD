@@ -66,6 +66,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Clustering dan Klasifikasi" href="Analisis_Clustering_dan_Klasifikasi.html" />
     <link rel="prev" title="Contoh Perhitungan Statistik – PSD" href="contoh_perhitungan_statistik.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -258,6 +259,10 @@
 
 
 
+
+<li class="toctree-l1"><a class="reference internal" href="Analisis_Clustering_dan_Klasifikasi.html">Clustering dan Klasifikasi</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="UTS.html">SIG Klasifikasi Tutupan Lahan Jawa Timur</a></li>
 </ul>
 
     </div>
@@ -428,6 +433,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-hasil-preprocessing">Data Hasil Preprocessing</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-peta-wilayah-penelitian">3. Visualisasi Peta Wilayah Penelitian</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eda-time-series-co-no2-dan-so2">4. EDA — Time Series CO, NO₂, dan SO₂</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-statistik-dasar">5. Konsep statistik dasar</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-perhitungan-manual-mean">Contoh Perhitungan Manual — Mean</a></li>
@@ -487,9 +493,11 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Import library</span>
 
+<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">contextily</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ctx</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
@@ -540,9 +548,7 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Konfigurasi path</span>
-
-<span class="n">BASE</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">".."</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">BASE</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">".."</span><span class="p">)</span>
 
 <span class="n">CLASS_DIR</span> <span class="o">=</span> <span class="n">BASE</span> <span class="o">/</span> <span class="s2">"data"</span> <span class="o">/</span> <span class="s2">"class"</span>
 <span class="n">PROCESSED_DIR</span> <span class="o">=</span> <span class="n">BASE</span> <span class="o">/</span> <span class="s2">"data"</span> <span class="o">/</span> <span class="s2">"processed"</span>
@@ -571,6 +577,394 @@ FEATURE_DIR : ..\data\features
 </div>
 </div>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="visualisasi-peta-wilayah-penelitian">
+<h1>3. Visualisasi Peta Wilayah Penelitian<a class="headerlink" href="#visualisasi-peta-wilayah-penelitian" title="Link to this heading">#</a></h1>
+<p>Wilayah penelitian yang digunakan adalah Kecamatan Menganti, Kabupaten Gresik.
+Batas wilayah disimpan dalam format GeoJSON dan digunakan untuk menampilkan
+lokasi penelitian secara geografis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">folium</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+
+<span class="c1"># Membaca GeoJSON</span>
+<span class="n">GEOJSON_PATH</span> <span class="o">=</span> <span class="n">BASE</span> <span class="o">/</span> <span class="s2">"data"</span> <span class="o">/</span> <span class="s2">"geojson"</span> <span class="o">/</span> <span class="s2">"menganti.geojson"</span>
+<span class="n">gdf_menganti</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">GEOJSON_PATH</span><span class="p">)</span>
+
+<span class="c1"># Pastikan WGS84 untuk Folium</span>
+<span class="n">gdf_menganti</span> <span class="o">=</span> <span class="n">gdf_menganti</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">4326</span><span class="p">)</span>
+
+<span class="c1"># Hitung centroid</span>
+<span class="n">centroid</span> <span class="o">=</span> <span class="n">gdf_menganti</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">union_all</span><span class="p">()</span><span class="o">.</span><span class="n">centroid</span>
+
+<span class="n">centroid_lat</span> <span class="o">=</span> <span class="n">centroid</span><span class="o">.</span><span class="n">y</span>
+<span class="n">centroid_lon</span> <span class="o">=</span> <span class="n">centroid</span><span class="o">.</span><span class="n">x</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Centroid Latitude : </span><span class="si">{</span><span class="n">centroid_lat</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Centroid Longitude: </span><span class="si">{</span><span class="n">centroid_lon</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Buat peta interaktif</span>
+<span class="n">peta_wilayah</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span>
+    <span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="n">centroid_lat</span><span class="p">,</span> <span class="n">centroid_lon</span><span class="p">],</span>
+    <span class="n">zoom_start</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span>
+    <span class="n">tiles</span><span class="o">=</span><span class="s2">"OpenStreetMap"</span>
+<span class="p">)</span>
+
+<span class="c1"># Polygon wilayah penelitian</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">GeoJson</span><span class="p">(</span>
+    <span class="n">gdf_menganti</span><span class="o">.</span><span class="n">to_json</span><span class="p">(),</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"Kecamatan Menganti"</span><span class="p">,</span>
+    <span class="n">style_function</span><span class="o">=</span><span class="k">lambda</span> <span class="n">feature</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"#e74c3c"</span><span class="p">,</span>
+        <span class="s2">"weight"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s2">"fillColor"</span><span class="p">:</span> <span class="s2">"#e74c3c"</span><span class="p">,</span>
+        <span class="s2">"fillOpacity"</span><span class="p">:</span> <span class="mf">0.15</span>
+    <span class="p">},</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="s2">"Batas Wilayah Penelitian - Kecamatan Menganti"</span><span class="p">,</span>
+    <span class="n">popup</span><span class="o">=</span><span class="n">folium</span><span class="o">.</span><span class="n">Popup</span><span class="p">(</span>
+        <span class="s2">"&lt;b&gt;Wilayah Penelitian&lt;/b&gt;&lt;br&gt;"</span>
+        <span class="s2">"Kecamatan Menganti, Kabupaten Gresik&lt;br&gt;"</span>
+        <span class="s2">"Polutan: NO₂, CO, SO₂&lt;br&gt;"</span>
+        <span class="s2">"Periode: Agu 2025 - Agu 2026"</span><span class="p">,</span>
+        <span class="n">max_width</span><span class="o">=</span><span class="mi">300</span>
+    <span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">peta_wilayah</span><span class="p">)</span>
+
+<span class="c1"># Marker centroid</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
+    <span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="n">centroid_lat</span><span class="p">,</span> <span class="n">centroid_lon</span><span class="p">],</span>
+    <span class="n">popup</span><span class="o">=</span><span class="n">folium</span><span class="o">.</span><span class="n">Popup</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"&lt;b&gt;Titik Pusat Wilayah&lt;/b&gt;&lt;br&gt;"</span>
+        <span class="sa">f</span><span class="s2">"Lat: </span><span class="si">{</span><span class="n">centroid_lat</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&lt;br&gt;"</span>
+        <span class="sa">f</span><span class="s2">"Lon: </span><span class="si">{</span><span class="n">centroid_lon</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&lt;br&gt;"</span>
+        <span class="s2">"Sumber data: Sentinel-5P via Copernicus Data Space"</span><span class="p">,</span>
+        <span class="n">max_width</span><span class="o">=</span><span class="mi">300</span>
+    <span class="p">),</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="s2">"Titik Pusat Wilayah Penelitian"</span><span class="p">,</span>
+    <span class="n">icon</span><span class="o">=</span><span class="n">folium</span><span class="o">.</span><span class="n">Icon</span><span class="p">(</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">,</span>
+        <span class="n">icon</span><span class="o">=</span><span class="s2">"cloud"</span><span class="p">,</span>
+        <span class="n">prefix</span><span class="o">=</span><span class="s2">"fa"</span>
+    <span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">peta_wilayah</span><span class="p">)</span>
+
+<span class="c1"># Layer control</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">LayerControl</span><span class="p">()</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">peta_wilayah</span><span class="p">)</span>
+
+<span class="n">peta_wilayah</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Centroid Latitude : -7.276807
+Centroid Longitude: 112.584716
+</pre></div>
+</div>
+<div class="output text_html"><div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -> Trust Notebook</span><iframe srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    
+    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://code.jquery.com/jquery-3.7.1.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&quot;/&gt;
+    
+            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
+            &lt;style&gt;
+                #map_66d3a74e5c58fbb6f1259948496c9b8f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            &lt;/style&gt;
+
+            &lt;style&gt;html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            &lt;/style&gt;
+
+            &lt;style&gt;#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            &lt;/style&gt;
+
+            &lt;script&gt;
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            &lt;/script&gt;
+
+        
+&lt;/head&gt;
+&lt;body&gt;
+    
+    
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_66d3a74e5c58fbb6f1259948496c9b8f&quot; &gt;&lt;/div&gt;
+        
+&lt;/body&gt;
+&lt;script&gt;
+    
+    
+            var map_66d3a74e5c58fbb6f1259948496c9b8f = L.map(
+                &quot;map_66d3a74e5c58fbb6f1259948496c9b8f&quot;,
+                {
+                    center: [-7.2768074654905295, 112.584715538011],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  &quot;zoom&quot;: 11,
+  &quot;zoomControl&quot;: true,
+  &quot;preferCanvas&quot;: false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f299844d0aa32f86bc8a855e9e30e5fd = L.tileLayer(
+                &quot;https://tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
+                {
+  &quot;minZoom&quot;: 0,
+  &quot;maxZoom&quot;: 19,
+  &quot;maxNativeZoom&quot;: 19,
+  &quot;noWrap&quot;: false,
+  &quot;attribution&quot;: &quot;\u0026copy; \u003ca href=\&quot;https://www.openstreetmap.org/copyright\&quot;\u003eOpenStreetMap\u003c/a\u003e contributors&quot;,
+  &quot;subdomains&quot;: &quot;abc&quot;,
+  &quot;detectRetina&quot;: false,
+  &quot;tms&quot;: false,
+  &quot;opacity&quot;: 1,
+}
+
+            );
+        
+    
+            tile_layer_f299844d0aa32f86bc8a855e9e30e5fd.addTo(map_66d3a74e5c58fbb6f1259948496c9b8f);
+        
+    
+        function geo_json_0fb1dde7b413365d1940398152179948_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {&quot;color&quot;: &quot;#e74c3c&quot;, &quot;fillColor&quot;: &quot;#e74c3c&quot;, &quot;fillOpacity&quot;: 0.15, &quot;weight&quot;: 3};
+            }
+        }
+
+        function geo_json_0fb1dde7b413365d1940398152179948_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_0fb1dde7b413365d1940398152179948 = L.geoJson(null, {
+                onEachFeature: geo_json_0fb1dde7b413365d1940398152179948_onEachFeature,
+            
+                style: geo_json_0fb1dde7b413365d1940398152179948_styler,
+            ...{
+}
+        });
+
+        function geo_json_0fb1dde7b413365d1940398152179948_add (data) {
+            geo_json_0fb1dde7b413365d1940398152179948
+                .addData(data);
+        }
+            geo_json_0fb1dde7b413365d1940398152179948_add({&quot;features&quot;: [{&quot;geometry&quot;: {&quot;coordinates&quot;: [[[112.59516000191194, -7.225940000291362, 5.999998848e-06], [112.59099999905258, -7.224610000205063, 5.999998848e-06], [112.59408000056496, -7.226529999873645, 5.999998848e-06], [112.5924121246281, -7.232313098015084, 5.999998848e-06], [112.58870000020984, -7.226500001877098, 5.999998848e-06], [112.58873000034708, -7.230639999768107, 5.999998848e-06], [112.57865325375036, -7.229671936102144, 5.999998848e-06], [112.58012999963582, -7.233550000299608, 5.999998848e-06], [112.5757200010228, -7.236930000094405, 5.999998848e-06], [112.57607000082714, -7.241740000051873, 5.999998848e-06], [112.57213000077078, -7.241109999660503, 5.999998848e-06], [112.57445000150166, -7.246450001986463, 5.999998848e-06], [112.5686600010677, -7.243250000518439, 5.999998848e-06], [112.5666862963873, -7.245544258621799, 5.999998848e-06], [112.5642100013734, -7.244279999900331, 5.999998848e-06], [112.56237000014326, -7.247590000595725, 5.999998848e-06], [112.56568379629316, -7.252117341950473, 5.999998848e-06], [112.56062000112142, -7.253760000738323, 5.999998848e-06], [112.56244000046345, -7.259390000091739, 5.999998848e-06], [112.55868993569919, -7.257590343293558, 5.999998848e-06], [112.55744000004992, -7.261670000171579, 5.999998848e-06], [112.5571547894388, -7.258201884314902, 5.999998848e-06], [112.54726220196689, -7.257089059630029, 5.999998848e-06], [112.53896000085716, -7.270730001676577, 5.999998848e-06], [112.52956999922714, -7.269960000284392, 5.999998848e-06], [112.52768999961063, -7.282390000192273, 5.999998848e-06], [112.5331700004232, -7.28357000029831, 5.999998848e-06], [112.52949000065782, -7.285480000230127, 5.999998848e-06], [112.52845000039216, -7.295129999876184, 5.999998848e-06], [112.54284719434786, -7.294404608683068, 5.999998848e-06], [112.55160499581687, -7.297052589017876, 5.999998848e-06], [112.5524200004432, -7.301270001336851, 5.999998848e-06], [112.56228572828813, -7.304448968231666, 5.999998848e-06], [112.56125223362174, -7.309777989009953, 5.999998848e-06], [112.56829999942097, -7.31248999975674, 5.999998848e-06], [112.57077404235847, -7.312206879764272, 5.999998848e-06], [112.57106231622468, -7.307402285133086, 5.999998848e-06], [112.58664884548057, -7.313246462222049, 5.999998848e-06], [112.58896744663625, -7.310385437695059, 5.999998848e-06], [112.59734000020578, -7.311510000119583, 5.999998848e-06], [112.59911701965304, -7.308105863621296, 5.999998848e-06], [112.61073000036997, -7.313479999688227, 5.999998848e-06], [112.62974548350695, -7.314701213183386, 5.999998848e-06], [112.628016759286, -7.29080011989952, 5.999998848e-06], [112.62168091643429, -7.282646953224588, 5.999998848e-06], [112.6290923903291, -7.273632522641267, 5.999998848e-06], [112.63146165107689, -7.26104280793079, 5.999998848e-06], [112.6180868854416, -7.257694105082725, 5.999998848e-06], [112.61241678764023, -7.249640000920931, 5.999998848e-06], [112.6039914742174, -7.249516476375606, 5.999998848e-06], [112.60161336955565, -7.246429816768639, 5.999998848e-06], [112.60708442314795, -7.237201258132427, 5.999998848e-06], [112.59516000191194, -7.225940000291362, 5.999998848e-06]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;id&quot;: &quot;0&quot;, &quot;properties&quot;: {&quot;KDCBPS&quot;: &quot;3525040&quot;, &quot;WADMKC&quot;: &quot;Menganti&quot;, &quot;WADMKK&quot;: &quot;Gresik&quot;}, &quot;type&quot;: &quot;Feature&quot;}], &quot;type&quot;: &quot;FeatureCollection&quot;});
+
+        
+    
+            geo_json_0fb1dde7b413365d1940398152179948.bindTooltip(
+                `&lt;div&gt;
+                     Batas Wilayah Penelitian - Kecamatan Menganti
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+        var popup_dae0271fd190226faf0c8b8c505f38d8 = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_707c8d0a79e3d83eae00518d36bf009a = $(`&lt;div id=&quot;html_707c8d0a79e3d83eae00518d36bf009a&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;Wilayah Penelitian&lt;/b&gt;&lt;br&gt;Kecamatan Menganti, Kabupaten Gresik&lt;br&gt;Polutan: NO₂, CO, SO₂&lt;br&gt;Periode: Agu 2025 - Agu 2026&lt;/div&gt;`)[0];
+                popup_dae0271fd190226faf0c8b8c505f38d8.setContent(html_707c8d0a79e3d83eae00518d36bf009a);
+            
+        
+
+        geo_json_0fb1dde7b413365d1940398152179948.bindPopup(popup_dae0271fd190226faf0c8b8c505f38d8)
+        ;
+
+        
+    
+    
+            geo_json_0fb1dde7b413365d1940398152179948.addTo(map_66d3a74e5c58fbb6f1259948496c9b8f);
+        
+    
+            var marker_16357af438d09a72fcb91547156813e8 = L.marker(
+                [-7.2768074654905295, 112.584715538011],
+                {
+}
+            ).addTo(map_66d3a74e5c58fbb6f1259948496c9b8f);
+        
+    
+            var icon_3c47c95cd36c8ade185e70ad7555e084 = L.AwesomeMarkers.icon(
+                {
+  &quot;markerColor&quot;: &quot;blue&quot;,
+  &quot;iconColor&quot;: &quot;white&quot;,
+  &quot;icon&quot;: &quot;cloud&quot;,
+  &quot;prefix&quot;: &quot;fa&quot;,
+  &quot;extraClasses&quot;: &quot;fa-rotate-0&quot;,
+}
+            );
+        
+    
+        var popup_045be3b655a6c2bdb3d21f04bc113a0e = L.popup({
+  &quot;maxWidth&quot;: 300,
+});
+
+        
+            
+                var html_aa13f2d89bceb173044821d5fe11ee50 = $(`&lt;div id=&quot;html_aa13f2d89bceb173044821d5fe11ee50&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;&lt;b&gt;Titik Pusat Wilayah&lt;/b&gt;&lt;br&gt;Lat: -7.27681&lt;br&gt;Lon: 112.58472&lt;br&gt;Sumber data: Sentinel-5P via Copernicus Data Space&lt;/div&gt;`)[0];
+                popup_045be3b655a6c2bdb3d21f04bc113a0e.setContent(html_aa13f2d89bceb173044821d5fe11ee50);
+            
+        
+
+        marker_16357af438d09a72fcb91547156813e8.bindPopup(popup_045be3b655a6c2bdb3d21f04bc113a0e)
+        ;
+
+        
+    
+    
+            marker_16357af438d09a72fcb91547156813e8.bindTooltip(
+                `&lt;div&gt;
+                     Titik Pusat Wilayah Penelitian
+                 &lt;/div&gt;`,
+                {
+  &quot;sticky&quot;: true,
+}
+            );
+        
+    
+                marker_16357af438d09a72fcb91547156813e8.setIcon(icon_3c47c95cd36c8ade185e70ad7555e084);
+            
+    
+            var layer_control_e5b5bdcd0f698202cc8e3b1e751a14c1_layers = {
+                base_layers : {
+                    &quot;openstreetmap&quot; : tile_layer_f299844d0aa32f86bc8a855e9e30e5fd,
+                },
+                overlays :  {
+                    &quot;Kecamatan Menganti&quot; : geo_json_0fb1dde7b413365d1940398152179948,
+                },
+            };
+            let layer_control_e5b5bdcd0f698202cc8e3b1e751a14c1 = L.control.layers(
+                layer_control_e5b5bdcd0f698202cc8e3b1e751a14c1_layers.base_layers,
+                layer_control_e5b5bdcd0f698202cc8e3b1e751a14c1_layers.overlays,
+                {
+  &quot;position&quot;: &quot;topright&quot;,
+  &quot;collapsed&quot;: true,
+  &quot;autoZIndex&quot;: true,
+}
+            ).addTo(map_66d3a74e5c58fbb6f1259948496c9b8f);
+
+        
+&lt;/script&gt;
+&lt;/html&gt;" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pusat peta berdasarkan centroid wilayah Menganti</span>
+<span class="n">centroid</span> <span class="o">=</span> <span class="n">gdf_menganti</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">4326</span><span class="p">)</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">union_all</span><span class="p">()</span><span class="o">.</span><span class="n">centroid</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span>
+    <span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="n">centroid</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">centroid</span><span class="o">.</span><span class="n">x</span><span class="p">],</span>
+    <span class="n">zoom_start</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span>
+    <span class="n">tiles</span><span class="o">=</span><span class="s2">"OpenStreetMap"</span>
+<span class="p">)</span>
+
+<span class="c1"># Tambahkan batas wilayah Menganti</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">GeoJson</span><span class="p">(</span>
+    <span class="n">gdf_menganti</span><span class="o">.</span><span class="n">to_json</span><span class="p">(),</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"Kecamatan Menganti"</span><span class="p">,</span>
+    <span class="n">style_function</span><span class="o">=</span><span class="k">lambda</span> <span class="n">feature</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"fillColor"</span><span class="p">:</span> <span class="s2">"yellow"</span><span class="p">,</span>
+        <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span>
+        <span class="s2">"weight"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s2">"fillOpacity"</span><span class="p">:</span> <span class="mf">0.35</span>
+    <span class="p">},</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="n">folium</span><span class="o">.</span><span class="n">GeoJsonTooltip</span><span class="p">(</span>
+        <span class="n">fields</span><span class="o">=</span><span class="p">[],</span>
+        <span class="n">aliases</span><span class="o">=</span><span class="p">[],</span>
+        <span class="n">labels</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+<span class="n">folium</span><span class="o">.</span><span class="n">LayerControl</span><span class="p">()</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;folium.map.LayerControl at 0x1984f847e60&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="n">gdf_menganti</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+    <span class="n">edgecolor</span><span class="o">=</span><span class="s2">"black"</span><span class="p">,</span>
+    <span class="n">facecolor</span><span class="o">=</span><span class="s2">"lightgray"</span><span class="p">,</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.2</span>
+<span class="p">)</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">gdf_menganti</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">point</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">representative_point</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+        <span class="s2">"Menganti"</span><span class="p">,</span>
+        <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">point</span><span class="o">.</span><span class="n">y</span><span class="p">),</span>
+        <span class="n">ha</span><span class="o">=</span><span class="s2">"center"</span><span class="p">,</span>
+        <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+        <span class="n">fontweight</span><span class="o">=</span><span class="s2">"bold"</span>
+    <span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span>
+    <span class="s2">"Wilayah Penelitian Kecamatan Menganti, Kabupaten Gresik"</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span>
+<span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"Longitude"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Latitude"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">"--"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/946a3260169a56bec3b3d6a6bd89c281fd130db11afba438cc42af79a218dd16.png" src="_images/946a3260169a56bec3b3d6a6bd89c281fd130db11afba438cc42af79a218dd16.png" />
+</div>
+</div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="eda-time-series-co-no2-dan-so2">
 <h1>4. EDA — Time Series CO, NO₂, dan SO₂<a class="headerlink" href="#eda-time-series-co-no2-dan-so2" title="Link to this heading">#</a></h1>
@@ -4920,6 +5314,15 @@ Name: count, dtype: int64
         <p class="prev-next-title">Contoh Perhitungan Statistik – PSD</p>
       </div>
     </a>
+    <a class="right-next"
+       href="Analisis_Clustering_dan_Klasifikasi.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Clustering dan Klasifikasi</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -4948,6 +5351,7 @@ Name: count, dtype: int64
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-hasil-preprocessing">Data Hasil Preprocessing</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-peta-wilayah-penelitian">3. Visualisasi Peta Wilayah Penelitian</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eda-time-series-co-no2-dan-so2">4. EDA — Time Series CO, NO₂, dan SO₂</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-statistik-dasar">5. Konsep statistik dasar</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-perhitungan-manual-mean">Contoh Perhitungan Manual — Mean</a></li>

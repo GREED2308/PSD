@@ -1,0 +1,7 @@
+﻿class_id,class_name,jumlah_sampel,tercakup,belum_tercakup,total_pasangan_produk_sampel
+1,sawah,50,50,0,100
+2,bangunan,100,100,0,792
+3,mangrove,49,49,0,196
+4,lahan_hijau,48,48,0,130
+5,laut,40,40,0,120
+6,danau,66,66,0,156

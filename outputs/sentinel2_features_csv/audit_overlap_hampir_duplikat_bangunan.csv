@@ -1,0 +1,2 @@
+﻿sample_id_a,sample_id_b,class_name,overlap_pct_of_smaller_polygon,intersection_over_union_pct,status_a,clear_pixels_a,status_b,clear_pixels_b,recommended_action
+JTM0051,JTM0150,bangunan,99.5586,97.1785,OK,46,NO_CLEAR_PIXELS,0,VISUAL_REVIEW_POSSIBLE_NEAR_DUPLICATE; DO_NOT_SPLIT_ACROSS_TRAIN_TEST

@@ -1,0 +1,35 @@
+{
+  "dataset_variant": "quality_screened",
+  "source_file": "D:\\Projects\\Kuliah\\PSD\\outputs\\sentinel2_temporal_composite_v6\\dataset_modeling_v6_quality_screened.csv",
+  "n_samples_used": 255,
+  "class_counts": {
+    "sawah": 22,
+    "bangunan": 51,
+    "mangrove": 49,
+    "lahan_hijau": 48,
+    "laut": 40,
+    "danau": 45
+  },
+  "features": [
+    "B01_mean",
+    "B02_mean",
+    "B03_mean",
+    "B04_mean",
+    "B05_mean",
+    "B06_mean",
+    "B07_mean",
+    "B08_mean",
+    "B8A_mean",
+    "B09_mean",
+    "B11_mean",
+    "B12_mean",
+    "NDVI_mean",
+    "NDWI_mean",
+    "MNDWI_mean",
+    "NDBI_mean"
+  ],
+  "test_size_fraction": 0.2,
+  "random_state": 42,
+  "cv_folds_on_training_only": 5,
+  "validation_note": "Random stratified split; not spatially blocked. Nearby/geographically correlated samples may make estimates optimistic."
+}

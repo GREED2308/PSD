@@ -1,0 +1,7 @@
+﻿class_name,sample_count,status_OK_count,status_non_OK_count,clear_pixel_min,clear_pixel_median,clear_pixel_max,samples_clear_pixels_lt10,samples_clear_pixels_lt25,samples_clear_fraction_lt50pct,median_mean_clear_observations_per_pixel,samples_mean_clear_observations_lt2,samples_missing_feature_means,samples_flagged_for_review
+bangunan,51,51,0,15.0,44.0,272.0,0,7,0,10.78125,0,0,7
+danau,65,65,0,2.0,174.0,24029.0,14,19,5,8.0,5,0,22
+lahan_hijau,48,48,0,297.0,1516.0,12853.0,0,0,0,6.5545220375061035,0,0,0
+laut,40,40,0,25.0,4613.0,17748.0,0,0,0,8.592843532562256,0,0,0
+mangrove,49,49,0,21.0,123.0,1173.0,0,1,0,10.0,0,0,1
+sawah,50,50,0,3.0,8.0,22.0,28,50,0,7.029411792755127,0,0,50
